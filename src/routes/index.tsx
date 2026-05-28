@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { Hero } from "@/components/sections/Hero";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
 import { Services } from "@/components/sections/Services";
-import { CaseStudies } from "@/components/sections/CaseStudies";
+import { CaseStudies, caseStudyImagePreloadUrls } from "@/components/sections/CaseStudies";
 import { Stats } from "@/components/sections/Stats";
 import { Differentiators } from "@/components/sections/Differentiators";
 import { Perspectives } from "@/components/sections/Perspectives";
@@ -20,9 +20,17 @@ export const Route = createFileRoute("/")({
           "Wallace Croft partners with enterprises on consulting, engineering, cloud, AI, and managed services that create lasting impact.",
       },
       { property: "og:title", content: "Wallace Croft - Innovate Forward" },
-      { property: "og:description", content: "Driving business transformation through technology." },
+      {
+        property: "og:description",
+        content: "Driving business transformation through technology.",
+      },
       { property: "og:type", content: "website" },
     ],
+    links: caseStudyImagePreloadUrls.map((href) => ({
+      rel: "preload",
+      href,
+      as: "image",
+    })),
     scripts: [
       {
         type: "application/ld+json",

@@ -44,7 +44,8 @@ const items = [
     title: "Leading the way in communication technologies",
     desc: "A clearer ICT service journey for operators, regulators, utilities, and enterprise network buyers.",
     img: "https://www.broadcom.co.ke/images/caro1.webp",
-    cardImage: "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/services/d48ba2cb-01ea-4ae6-a330-e953fb4009af_DSC_4967.jpg",
+    cardImage:
+      "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/services/d48ba2cb-01ea-4ae6-a330-e953fb4009af_DSC_4967.jpg",
     metric: "24+",
     metricLabel: "Years of telecom and ICT delivery clarified",
     bg: "#eef1f4",
@@ -86,7 +87,8 @@ const items = [
     title: "Building agent workflows for service teams",
     desc: "AI-assisted work queues that help teams move faster.",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85",
-    cardImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=85",
+    cardImage:
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=85",
     metric: "42%",
     metricLabel: "Faster completion across pilot workflows",
     bg: "#eef1f4",
@@ -107,7 +109,8 @@ const items = [
     title: "Unifying data for sharper enterprise decisions",
     desc: "A trusted intelligence layer for growth and operations.",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85",
-    cardImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85",
+    cardImage:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85",
     metric: "70%",
     metricLabel: "Less manual reporting in risk reviews",
     bg: "#eef3f7",
@@ -131,10 +134,13 @@ export const caseStudyStories = [
     eyebrow: "Telecom / ICT transformation",
     client: "Broadband Communication Networks",
     title: "Leading the way in communication technologies",
-    subtitle: "A sharper digital presence for a 24-year technology solutions provider serving communication network operators, ISPs, regulators, utilities, and enterprise ICT buyers across Africa.",
-    cardDescription: "A service-led website that makes Broadcom's telecom, enterprise network, data-center, power, and support capabilities easier to understand.",
+    subtitle:
+      "A sharper digital presence for a 24-year technology solutions provider serving communication network operators, ISPs, regulators, utilities, and enterprise ICT buyers across Africa.",
+    cardDescription:
+      "A service-led website that makes Broadcom's telecom, enterprise network, data-center, power, and support capabilities easier to understand.",
     sourceUrl: "https://www.broadcom.co.ke",
-    image: "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/media-images/9fcba073-f585-484f-a495-01ea9fef1e5d_CA_QoSMS_Launch_2018.jpg",
+    image:
+      "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/media-images/9fcba073-f585-484f-a495-01ea9fef1e5d_CA_QoSMS_Launch_2018.jpg",
     heroImage: "https://www.broadcom.co.ke/images/caro1.webp",
     services: ["Telecom website", "Enterprise content", "Service architecture"],
     overview: [
@@ -150,36 +156,49 @@ export const caseStudyStories = [
     galleryImages: [
       {
         title: "Telecom Operations Environment",
-        image: "https://images.unsplash.com/photo-1484662020986-75935d2ebc66?auto=format&fit=crop&w=1400&q=85",
+        image:
+          "https://images.unsplash.com/photo-1484662020986-75935d2ebc66?auto=format&fit=crop&w=1400&q=85",
       },
       {
         title: "Network Infrastructure Detail",
-        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1400&q=85",
+        image:
+          "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1400&q=85",
       },
     ],
     sections: [
       {
         title: "A Hero Built Around Infrastructure Trust",
         body: "The homepage leads with the company as a technology solution provider for communication network operators, ISPs, regulators, and enterprise ICT customers, immediately grounding the story in real infrastructure work.",
-        image: "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/services/d48ba2cb-01ea-4ae6-a330-e953fb4009af_DSC_4967.jpg",
+        image:
+          "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/services/d48ba2cb-01ea-4ae6-a330-e953fb4009af_DSC_4967.jpg",
       },
       {
         title: "Core Solutions Made Easier to Navigate",
         body: "The service structure clarifies project implementation, enterprise networks, maintenance and support, network solutions, green energy, and data-center solutions so technical visitors can find the right path quickly.",
-        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85",
+        image:
+          "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85",
       },
       {
         title: "Partnerships and Delivery Confidence",
         body: "The content highlights long-standing expertise, trusted partnerships with global technology leaders, and dependable delivery across modern telecom and ICT environments.",
-        image: "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/services/11b93eac-cc30-4bbd-a293-1e05bafe7737_DJI_0052.JPG",
+        image:
+          "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/services/11b93eac-cc30-4bbd-a293-1e05bafe7737_DJI_0052.JPG",
       },
       {
         title: "Sustainability in Network Operations",
         body: "Green energy and sustainable network power are treated as part of the core offer, showing that infrastructure modernization can also reduce operating cost and environmental impact.",
-        image: "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/media-images/b31b227c-254a-4ebf-be8f-6e80ef3e2d5c_Hybrid_System-Solar__Wind_1.webp",
+        image:
+          "https://rpfasixbozhsawdgbswy.supabase.co/storage/v1/object/public/media-images/b31b227c-254a-4ebf-be8f-6e80ef3e2d5c_Hybrid_System-Solar__Wind_1.webp",
       },
     ],
-    features: ["Project implementation", "Enterprise networks", "Maintenance and support", "Network solutions", "Green energy", "Data-center solutions"],
+    features: [
+      "Project implementation",
+      "Enterprise networks",
+      "Maintenance and support",
+      "Network solutions",
+      "Green energy",
+      "Data-center solutions",
+    ],
     featureCards: [
       {
         title: "ICT Solution Hub",
@@ -206,15 +225,18 @@ export const caseStudyStories = [
         visual: "files",
       },
     ],
-    impact: "A clearer brand and service journey for a telecom partner whose work spans mobile broadband, transmission networks, enterprise ICT, power systems, quality-of-service optimization, and long-term support.",
+    impact:
+      "A clearer brand and service journey for a telecom partner whose work spans mobile broadband, transmission networks, enterprise ICT, power systems, quality-of-service optimization, and long-term support.",
   },
   {
     slug: "wellness-hub-care-platform",
     eyebrow: "Healthcare / wellbeing",
     client: "The Wellness Hub",
     title: "Discover your best self",
-    subtitle: "A calm digital experience for compassionate psychotherapy and mental-health consultancy for corporates, adults, adolescents, and families in Nairobi.",
-    cardDescription: "A soft, reassuring web platform for therapy, mental-health consultancy, enquiry, calls, and session booking.",
+    subtitle:
+      "A calm digital experience for compassionate psychotherapy and mental-health consultancy for corporates, adults, adolescents, and families in Nairobi.",
+    cardDescription:
+      "A soft, reassuring web platform for therapy, mental-health consultancy, enquiry, calls, and session booking.",
     sourceUrl: "https://the-hub-pied.vercel.app",
     image: "https://the-hub-pied.vercel.app/assets/cta-therapy-bj2N_TWB.jpg",
     heroImage: "https://the-hub-pied.vercel.app/assets/hero-wellness-custom-opzVLQyh.png",
@@ -232,11 +254,13 @@ export const caseStudyStories = [
     galleryImages: [
       {
         title: "Thoughtful Therapy Session",
-        image: "https://images.pexels.com/photos/5234624/pexels-photo-5234624.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image:
+          "https://images.pexels.com/photos/5234624/pexels-photo-5234624.jpeg?auto=compress&cs=tinysrgb&w=1400",
       },
       {
         title: "Calm Support Conversation",
-        image: "https://images.pexels.com/photos/5699431/pexels-photo-5699431.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image:
+          "https://images.pexels.com/photos/5699431/pexels-photo-5699431.jpeg?auto=compress&cs=tinysrgb&w=1400",
       },
     ],
     sections: [
@@ -261,7 +285,14 @@ export const caseStudyStories = [
         image: "https://the-hub-pied.vercel.app/assets/about-approach-bg-CoVhSxOk.jpg",
       },
     ],
-    features: ["Adult therapy", "Adolescent support", "Family care", "Corporate consultancy", "Exploration calls", "Session booking"],
+    features: [
+      "Adult therapy",
+      "Adolescent support",
+      "Family care",
+      "Corporate consultancy",
+      "Exploration calls",
+      "Session booking",
+    ],
     featureCards: [
       {
         title: "Care Journey Hub",
@@ -288,55 +319,126 @@ export const caseStudyStories = [
         visual: "files",
       },
     ],
-    impact: "A softer, more credible web presence that makes therapy and mental-health consultancy easier to understand, trust, and approach.",
+    impact:
+      "A softer, more credible web presence that makes therapy and mental-health consultancy easier to understand, trust, and approach.",
   },
   {
     slug: "ai-commerce-personalization",
     eyebrow: "AI / retail",
     client: "Retail commerce",
     title: "AI-powered personalization for commerce teams",
-    subtitle: "A product intelligence layer that helps retail teams recommend the next best product, message, and offer.",
-    cardDescription: "Personalized shopping journeys powered by product, customer, and behavior signals.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=85",
-    heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=88",
+    subtitle:
+      "A product intelligence layer that helps retail teams recommend the next best product, message, and offer.",
+    cardDescription:
+      "Personalized shopping journeys powered by product, customer, and behavior signals.",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=85",
+    heroImage:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=88",
     services: ["AI strategy", "Data activation", "Commerce UX"],
     overview: [
       "Retail teams needed a way to turn scattered customer and product data into timely, useful shopping recommendations.",
       "The platform combines customer behavior, inventory, and campaign signals into a guided personalization workflow.",
     ],
-    stats: [["31%", "higher product discovery"], ["18%", "larger average basket"], ["2x", "faster campaign setup"]],
+    stats: [
+      ["31%", "higher product discovery"],
+      ["18%", "larger average basket"],
+      ["2x", "faster campaign setup"],
+    ],
     galleryImages: [
-      { title: "Commerce Intelligence Dashboard", image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=85" },
-      { title: "Retail Personalization Workflow", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=85" },
+      {
+        title: "Commerce Intelligence Dashboard",
+        image:
+          "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=85",
+      },
+      {
+        title: "Retail Personalization Workflow",
+        image:
+          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=85",
+      },
     ],
     sections: [
-      { title: "Customer Intelligence", body: "Behavior and preference data were translated into practical segments that marketing and merchandising teams could use.", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=85" },
-      { title: "Recommendation Workflow", body: "A guided workflow helped teams build campaigns, validate recommendations, and monitor conversion impact.", image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1400&q=85" },
+      {
+        title: "Customer Intelligence",
+        body: "Behavior and preference data were translated into practical segments that marketing and merchandising teams could use.",
+        image:
+          "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=85",
+      },
+      {
+        title: "Recommendation Workflow",
+        body: "A guided workflow helped teams build campaigns, validate recommendations, and monitor conversion impact.",
+        image:
+          "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1400&q=85",
+      },
     ],
-    features: ["Customer segments", "Offer logic", "Campaign testing", "Product affinity", "Analytics dashboards", "Automated recommendations"],
-    impact: "Commerce teams gained a more repeatable personalization engine with clearer measurement loops.",
+    features: [
+      "Customer segments",
+      "Offer logic",
+      "Campaign testing",
+      "Product affinity",
+      "Analytics dashboards",
+      "Automated recommendations",
+    ],
+    impact:
+      "Commerce teams gained a more repeatable personalization engine with clearer measurement loops.",
   },
   {
     slug: "enterprise-risk-management-platform",
     eyebrow: "Risk / enterprise",
     client: "Enterprise operations",
     title: "Enterprise risk management platform",
-    subtitle: "A decision workspace for risk owners to track exposure, controls, incidents, and remediation progress.",
-    cardDescription: "Digitized risk workflows with executive visibility and accountable remediation.",
-    image: "https://images.pexels.com/photos/6949913/pexels-photo-6949913.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    heroImage: "https://images.pexels.com/photos/3869649/pexels-photo-3869649.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    subtitle:
+      "A decision workspace for risk owners to track exposure, controls, incidents, and remediation progress.",
+    cardDescription:
+      "Digitized risk workflows with executive visibility and accountable remediation.",
+    image:
+      "https://images.pexels.com/photos/6949913/pexels-photo-6949913.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    heroImage:
+      "https://images.pexels.com/photos/3869649/pexels-photo-3869649.jpeg?auto=compress&cs=tinysrgb&w=1800",
     services: ["Workflow design", "Platform engineering", "Executive dashboards"],
-    overview: ["Risk work was spread across spreadsheets, email, and disconnected review cycles.", "We designed a single operating view for risks, ownership, control status, and escalation."],
-    stats: [["40%", "faster reviews"], ["1", "risk source of truth"], ["70%", "less manual reporting"]],
+    overview: [
+      "Risk work was spread across spreadsheets, email, and disconnected review cycles.",
+      "We designed a single operating view for risks, ownership, control status, and escalation.",
+    ],
+    stats: [
+      ["40%", "faster reviews"],
+      ["1", "risk source of truth"],
+      ["70%", "less manual reporting"],
+    ],
     galleryImages: [
-      { title: "Governance Review Session", image: "https://images.pexels.com/photos/9034230/pexels-photo-9034230.jpeg?auto=compress&cs=tinysrgb&w=1400" },
-      { title: "Executive Risk Discussion", image: "https://images.pexels.com/photos/5685763/pexels-photo-5685763.jpeg?auto=compress&cs=tinysrgb&w=1400" },
+      {
+        title: "Governance Review Session",
+        image:
+          "https://images.pexels.com/photos/9034230/pexels-photo-9034230.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      },
+      {
+        title: "Executive Risk Discussion",
+        image:
+          "https://images.pexels.com/photos/5685763/pexels-photo-5685763.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      },
     ],
     sections: [
-      { title: "Risk Workspace", body: "Teams can see open risk items, owners, deadlines, and control status in one place.", image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1400" },
-      { title: "Executive Signals", body: "Leadership views focus on exposure, urgency, trend, and response confidence.", image: "https://images.pexels.com/photos/3182765/pexels-photo-3182765.jpeg?auto=compress&cs=tinysrgb&w=1400" },
+      {
+        title: "Risk Workspace",
+        body: "Teams can see open risk items, owners, deadlines, and control status in one place.",
+        image:
+          "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      },
+      {
+        title: "Executive Signals",
+        body: "Leadership views focus on exposure, urgency, trend, and response confidence.",
+        image:
+          "https://images.pexels.com/photos/3182765/pexels-photo-3182765.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      },
     ],
-    features: ["Risk register", "Control tracking", "Escalation paths", "Executive reporting", "Evidence capture", "Audit-ready logs"],
+    features: [
+      "Risk register",
+      "Control tracking",
+      "Escalation paths",
+      "Executive reporting",
+      "Evidence capture",
+      "Audit-ready logs",
+    ],
     impact: "Risk teams moved from reactive reporting to clearer operating control.",
   },
   {
@@ -344,22 +446,57 @@ export const caseStudyStories = [
     eyebrow: "B2B / manufacturing",
     client: "Industrial sales",
     title: "B2B sales portal for field teams",
-    subtitle: "A portal for account managers and distributors to configure orders, track availability, and speed up quote cycles.",
+    subtitle:
+      "A portal for account managers and distributors to configure orders, track availability, and speed up quote cycles.",
     cardDescription: "Self-service B2B ordering and account workflows for distributed sales teams.",
-    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1400&q=85",
-    heroImage: "https://images.unsplash.com/photo-1581091215367-59ab6b74c7b4?auto=format&fit=crop&w=1800&q=88",
+    image:
+      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1400&q=85",
+    heroImage:
+      "https://images.unsplash.com/photo-1581091215367-59ab6b74c7b4?auto=format&fit=crop&w=1800&q=88",
     services: ["B2B commerce", "Portal UX", "ERP integration"],
-    overview: ["Sales reps were losing time to manual quote requests and disconnected product availability checks.", "The portal brought products, accounts, pricing rules, and order status into a single sales workflow."],
-    stats: [["35%", "faster quoting"], ["22%", "fewer order errors"], ["1", "sales workspace"]],
+    overview: [
+      "Sales reps were losing time to manual quote requests and disconnected product availability checks.",
+      "The portal brought products, accounts, pricing rules, and order status into a single sales workflow.",
+    ],
+    stats: [
+      ["35%", "faster quoting"],
+      ["22%", "fewer order errors"],
+      ["1", "sales workspace"],
+    ],
     galleryImages: [
-      { title: "Industrial Operations Floor", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=85" },
-      { title: "Field Sales Planning", image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85" },
+      {
+        title: "Industrial Operations Floor",
+        image:
+          "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=85",
+      },
+      {
+        title: "Field Sales Planning",
+        image:
+          "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85",
+      },
     ],
     sections: [
-      { title: "Account Ordering", body: "Sales teams can configure orders, compare availability, and submit requests from a guided interface.", image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=85" },
-      { title: "Operational Visibility", body: "ERP and inventory signals are surfaced directly in the portal to reduce back-and-forth.", image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=85" },
+      {
+        title: "Account Ordering",
+        body: "Sales teams can configure orders, compare availability, and submit requests from a guided interface.",
+        image:
+          "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=85",
+      },
+      {
+        title: "Operational Visibility",
+        body: "ERP and inventory signals are surfaced directly in the portal to reduce back-and-forth.",
+        image:
+          "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=85",
+      },
     ],
-    features: ["Quote builder", "Account pricing", "Order tracking", "Inventory signals", "Distributor access", "Approval rules"],
+    features: [
+      "Quote builder",
+      "Account pricing",
+      "Order tracking",
+      "Inventory signals",
+      "Distributor access",
+      "Approval rules",
+    ],
     impact: "Sales teams gained a cleaner workflow for complex B2B ordering and customer support.",
   },
   {
@@ -367,23 +504,59 @@ export const caseStudyStories = [
     eyebrow: "Commerce / retail",
     client: "Consumer retail",
     title: "Omnichannel commerce platform",
-    subtitle: "A unified experience connecting store, web, content, customer service, and fulfillment journeys.",
+    subtitle:
+      "A unified experience connecting store, web, content, customer service, and fulfillment journeys.",
     cardDescription: "Modern commerce foundations for consistent buying journeys across channels.",
-    image: "https://images.unsplash.com/photo-1556741533-974f8e62a92d?auto=format&fit=crop&w=1400&q=85",
-    heroImage: "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1800&q=88",
+    image:
+      "https://images.unsplash.com/photo-1556741533-974f8e62a92d?auto=format&fit=crop&w=1400&q=85",
+    heroImage:
+      "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1800&q=88",
     services: ["Commerce architecture", "Customer experience", "Integrations"],
-    overview: ["The business needed one connected customer experience across digital and physical channels.", "We aligned product discovery, ordering, support, and fulfillment into a shared commerce operating model."],
-    stats: [["28%", "checkout lift"], ["3", "channels unified"], ["19%", "repeat purchase growth"]],
+    overview: [
+      "The business needed one connected customer experience across digital and physical channels.",
+      "We aligned product discovery, ordering, support, and fulfillment into a shared commerce operating model.",
+    ],
+    stats: [
+      ["28%", "checkout lift"],
+      ["3", "channels unified"],
+      ["19%", "repeat purchase growth"],
+    ],
     galleryImages: [
-      { title: "Retail Service Counter", image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1400&q=85" },
-      { title: "Connected Commerce Team", image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=85" },
+      {
+        title: "Retail Service Counter",
+        image:
+          "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1400&q=85",
+      },
+      {
+        title: "Connected Commerce Team",
+        image:
+          "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=85",
+      },
     ],
     sections: [
-      { title: "Unified Customer Journey", body: "Customers move more naturally between discovery, product detail, support, and checkout.", image: "https://images.unsplash.com/photo-1556741533-411cf82e4e2d?auto=format&fit=crop&w=1400&q=85" },
-      { title: "Channel Operations", body: "Teams manage content, availability, and service workflows with better visibility.", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85" },
+      {
+        title: "Unified Customer Journey",
+        body: "Customers move more naturally between discovery, product detail, support, and checkout.",
+        image:
+          "https://images.unsplash.com/photo-1556741533-411cf82e4e2d?auto=format&fit=crop&w=1400&q=85",
+      },
+      {
+        title: "Channel Operations",
+        body: "Teams manage content, availability, and service workflows with better visibility.",
+        image:
+          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85",
+      },
     ],
-    features: ["Headless storefront", "CRM integration", "Content workflows", "Order visibility", "Service channels", "Analytics"],
-    impact: "A stronger commerce foundation improved customer continuity and operational visibility.",
+    features: [
+      "Headless storefront",
+      "CRM integration",
+      "Content workflows",
+      "Order visibility",
+      "Service channels",
+      "Analytics",
+    ],
+    impact:
+      "A stronger commerce foundation improved customer continuity and operational visibility.",
   },
 ] as const;
 
@@ -403,12 +576,18 @@ const slideVariants = {
 };
 
 const CASE_STUDY_AUTOPLAY_DELAY = 10000;
+const CASE_STUDY_MOBILE_AUTOPLAY_DELAY = 11000;
 const CASE_STUDY_TRANSITION_DURATION = 1.1;
+
+export const caseStudyImagePreloadUrls = Array.from(
+  new Set(items.flatMap((item) => [item.img, item.cardImage])),
+);
 
 export function CaseStudies() {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const current = items[active];
 
   const next = () => {
@@ -424,13 +603,40 @@ export function CaseStudies() {
   useEffect(() => {
     if (isPaused) return;
 
-    const timeout = window.setTimeout(() => {
-      setDirection(1);
-      setActive((value) => (value + 1) % items.length);
-    }, CASE_STUDY_AUTOPLAY_DELAY);
+    const timeout = window.setTimeout(
+      () => {
+        setDirection(1);
+        setActive((value) => (value + 1) % items.length);
+      },
+      isMobile ? CASE_STUDY_MOBILE_AUTOPLAY_DELAY : CASE_STUDY_AUTOPLAY_DELAY,
+    );
 
     return () => window.clearTimeout(timeout);
-  }, [active, isPaused]);
+  }, [active, isMobile, isPaused]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 900px)");
+    const updateMobileState = () => setIsMobile(media.matches);
+
+    updateMobileState();
+    media.addEventListener("change", updateMobileState);
+
+    return () => media.removeEventListener("change", updateMobileState);
+  }, []);
+
+  useEffect(() => {
+    const preloadedImages = caseStudyImagePreloadUrls.map((src) => {
+      const image = new Image();
+      image.decoding = "sync";
+      image.loading = "eager";
+      image.src = src;
+      return image;
+    });
+
+    return () => {
+      preloadedImages.length = 0;
+    };
+  }, []);
 
   return (
     <section
@@ -468,7 +674,7 @@ export function CaseStudies() {
           </div>
         </div>
 
-        <AnimatePresence custom={direction} mode="wait">
+        <AnimatePresence custom={direction} initial={false} mode="popLayout">
           <motion.article
             key={current.title}
             custom={direction}
@@ -489,14 +695,31 @@ export function CaseStudies() {
             transition={{ duration: CASE_STUDY_TRANSITION_DURATION, ease: [0.22, 1, 0.36, 1] }}
             className="case-study-motion"
           >
-            <div className={`case-study-showcase case-study-showcase--${current.visual} mt-9`} style={{ backgroundColor: current.bg }}>
+            <div
+              className={`case-study-showcase case-study-showcase--${current.visual} mt-9`}
+              style={{ backgroundColor: current.bg }}
+            >
               <span className="case-study-showcase__spark case-study-showcase__spark--one" />
               <span className="case-study-showcase__spark case-study-showcase__spark--two" />
               <div className="case-study-showcase__scene">
-                <svg className="case-study-showcase__connectors" viewBox="0 0 1180 540" aria-hidden="true" preserveAspectRatio="none">
-                  <path className="case-study-showcase__connector case-study-showcase__connector--left" d="M190 250 C285 250 305 225 395 225" />
-                  <path className="case-study-showcase__connector case-study-showcase__connector--right-top" d="M785 165 C875 165 905 118 990 118" />
-                  <path className="case-study-showcase__connector case-study-showcase__connector--right-bottom" d="M785 370 C885 370 910 430 995 430" />
+                <svg
+                  className="case-study-showcase__connectors"
+                  viewBox="0 0 1180 540"
+                  aria-hidden="true"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    className="case-study-showcase__connector case-study-showcase__connector--left"
+                    d="M190 250 C285 250 305 225 395 225"
+                  />
+                  <path
+                    className="case-study-showcase__connector case-study-showcase__connector--right-top"
+                    d="M785 165 C875 165 905 118 990 118"
+                  />
+                  <path
+                    className="case-study-showcase__connector case-study-showcase__connector--right-bottom"
+                    d="M785 370 C885 370 910 430 995 430"
+                  />
                   <circle className="case-study-showcase__node" cx="190" cy="250" r="7" />
                   <circle className="case-study-showcase__node" cx="395" cy="225" r="7" />
                   <circle className="case-study-showcase__node" cx="785" cy="165" r="7" />
@@ -504,7 +727,11 @@ export function CaseStudies() {
                   <circle className="case-study-showcase__node" cx="785" cy="370" r="7" />
                   <circle className="case-study-showcase__node" cx="995" cy="430" r="7" />
                 </svg>
-                <Link to={current.to} className="case-study-showcase__access-panel" aria-label={`View ${current.title} case study`}>
+                <Link
+                  to={current.to}
+                  className="case-study-showcase__access-panel"
+                  aria-label={`View ${current.title} case study`}
+                >
                   <span className="case-study-showcase__dot" />
                   <strong>{current.cardTitle}</strong>
                   <div className="case-study-showcase__tools">
@@ -538,15 +765,31 @@ export function CaseStudies() {
                   />
                 </div>
                 <span className="case-study-showcase__base" />
-                <Link to={current.to} className="case-study-showcase__metric-card" aria-label={`Open ${current.title} impact`}>
+                <Link
+                  to={current.to}
+                  className="case-study-showcase__metric-card"
+                  aria-label={`Open ${current.title} impact`}
+                >
                   <span>{current.accent}</span>
-                  <img src={current.cardImage} alt="" loading="lazy" width={260} height={180} />
+                  <img
+                    src={current.cardImage}
+                    alt=""
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="sync"
+                    width={260}
+                    height={180}
+                  />
                   <div className="case-study-showcase__mini-row">
                     <strong>{current.metric}</strong>
                     <small>{current.metricLabel.split(" ").slice(0, 2).join(" ")}</small>
                   </div>
                 </Link>
-                <Link to={current.to} className="case-study-showcase__search-card" aria-label={`Explore ${current.search} for ${current.title}`}>
+                <Link
+                  to={current.to}
+                  className="case-study-showcase__search-card"
+                  aria-label={`Explore ${current.search} for ${current.title}`}
+                >
                   <span>Search</span>
                   <strong>{current.search}</strong>
                   <small>{current.search} for business</small>
@@ -594,14 +837,30 @@ export function CaseStudyListing() {
       <div className="container-pro">
         <div className="case-story-listing__intro">
           <h2>Success Stories</h2>
-          <p>Discover how focused digital, data, and product work turns complex needs into measurable business outcomes.</p>
+          <p>
+            Discover how focused digital, data, and product work turns complex needs into measurable
+            business outcomes.
+          </p>
         </div>
 
         <div className="case-story-grid">
           {caseStudyStories.map((story) => (
-            <Link className="case-story-card" key={story.slug} to="/case-studies/$slug" params={{ slug: story.slug }}>
+            <Link
+              className="case-story-card"
+              key={story.slug}
+              to="/case-studies/$slug"
+              params={{ slug: story.slug }}
+            >
               <span className="case-story-card__media">
-                <img src={story.image} alt={story.title} loading="lazy" width={900} height={700} />
+                <img
+                  src={story.image}
+                  alt={story.title}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
+                  width={900}
+                  height={700}
+                />
               </span>
               <div className="case-story-card__meta">{story.eyebrow}</div>
               <h3>{story.title}</h3>
@@ -673,9 +932,31 @@ export function CaseStudyFooter() {
   const [openSections, setOpenSections] = useState(() => new Set(["Industries"]));
   const columns = [
     ["Company", "About", "Services", "Case Studies", "Resources", "Approach", "Contact"],
-    ["Digital Services", "AI Development Services", "Digital Transformation", "Commerce Acceleration", "Technology Innovation", "Digital Strategy", "Data Analytics & AI"],
-    ["Industries", "Retail", "Manufacturing", "Distribution", "Specializations", "Healthcare", "Finance"],
-    ["GenAI Services", "GenAI Software Development", "AI Agent Development", "LLM Development", "AI Strategy Consulting"],
+    [
+      "Digital Services",
+      "AI Development Services",
+      "Digital Transformation",
+      "Commerce Acceleration",
+      "Technology Innovation",
+      "Digital Strategy",
+      "Data Analytics & AI",
+    ],
+    [
+      "Industries",
+      "Retail",
+      "Manufacturing",
+      "Distribution",
+      "Specializations",
+      "Healthcare",
+      "Finance",
+    ],
+    [
+      "GenAI Services",
+      "GenAI Software Development",
+      "AI Agent Development",
+      "LLM Development",
+      "AI Strategy Consulting",
+    ],
   ] as const;
   const socialLinks = [
     { label: "Facebook", icon: "facebook" },
@@ -737,9 +1018,7 @@ export function CaseStudyFooter() {
                 <ul id={`footer-${title.toLowerCase().replaceAll(" ", "-")}`}>
                   {items.map((item) => (
                     <li key={item}>
-                      <Link to={getFooterLink(item)}>
-                        {item}
-                      </Link>
+                      <Link to={getFooterLink(item)}>{item}</Link>
                     </li>
                   ))}
                 </ul>
@@ -757,16 +1036,31 @@ function getFooterLink(item: string) {
   if (item === "Case Studies") return "/case-studies";
   if (item === "Resources" || item === "Approach") return "/resources";
   if (item === "Contact") return "/contact";
-  if (["Retail", "Manufacturing", "Distribution", "Specializations", "Healthcare", "Finance"].includes(item)) {
+  if (
+    [
+      "Retail",
+      "Manufacturing",
+      "Distribution",
+      "Specializations",
+      "Healthcare",
+      "Finance",
+    ].includes(item)
+  ) {
     return "/industries";
   }
 
   return "/services";
 }
 
-export function SocialIcon({ type }: { type: "facebook" | "linkedin" | "x" | "medium" | "youtube" | "instagram" }) {
+export function SocialIcon({
+  type,
+}: {
+  type: "facebook" | "linkedin" | "x" | "medium" | "youtube" | "instagram";
+}) {
   const paths = {
-    facebook: <path d="M14 8.6h2.1V5h-2.7C10.2 5 9 6.9 9 9.6V12H6v3.8h3V23h4.1v-7.2h2.8l.5-3.8h-3.3V10c0-.9.2-1.4.9-1.4Z" />,
+    facebook: (
+      <path d="M14 8.6h2.1V5h-2.7C10.2 5 9 6.9 9 9.6V12H6v3.8h3V23h4.1v-7.2h2.8l.5-3.8h-3.3V10c0-.9.2-1.4.9-1.4Z" />
+    ),
     linkedin: (
       <>
         <path d="M5.3 8.7a2.35 2.35 0 1 0 0-4.7 2.35 2.35 0 0 0 0 4.7Z" />
@@ -774,7 +1068,9 @@ export function SocialIcon({ type }: { type: "facebook" | "linkedin" | "x" | "me
         <path d="M10 10.4h4v1.7h.1c.6-1.1 2-2.1 4-2.1 4.3 0 5.1 2.8 5.1 6.5V23H19v-5.8c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V23H10Z" />
       </>
     ),
-    x: <path d="M15.2 10.5 22.7 2h-1.8l-6.5 7.4L9.2 2H3.2l7.9 11.2L3.2 22h1.8l6.9-7.8 5.5 7.8h6.1Zm-2.4 2.7-.8-1.1L5.6 3.3h2.8l5.1 7.1.8 1.1 6.7 9.3h-2.8Z" />,
+    x: (
+      <path d="M15.2 10.5 22.7 2h-1.8l-6.5 7.4L9.2 2H3.2l7.9 11.2L3.2 22h1.8l6.9-7.8 5.5 7.8h6.1Zm-2.4 2.7-.8-1.1L5.6 3.3h2.8l5.1 7.1.8 1.1 6.7 9.3h-2.8Z" />
+    ),
     medium: (
       <>
         <path d="M13.6 12c0 5.1-3 9.2-6.8 9.2S0 17.1 0 12s3-9.2 6.8-9.2 6.8 4.1 6.8 9.2Z" />
@@ -782,7 +1078,9 @@ export function SocialIcon({ type }: { type: "facebook" | "linkedin" | "x" | "me
         <path d="M24 12c0 4.3-.5 7.8-1.2 7.8s-1.2-3.5-1.2-7.8.5-7.8 1.2-7.8S24 7.7 24 12Z" />
       </>
     ),
-    youtube: <path d="M23.5 6.6a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.5A3 3 0 0 0 .5 6.6 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.4 3 3 0 0 0 2.1 2.1C4.5 20 12 20 12 20s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.4ZM9.6 15.5v-7l6.2 3.5Z" />,
+    youtube: (
+      <path d="M23.5 6.6a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.5A3 3 0 0 0 .5 6.6 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.4 3 3 0 0 0 2.1 2.1C4.5 20 12 20 12 20s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.4ZM9.6 15.5v-7l6.2 3.5Z" />
+    ),
     instagram: (
       <>
         <path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm9.4 2H7.4A3.4 3.4 0 0 0 4 7.4v9.2A3.4 3.4 0 0 0 7.4 20h9.2a3.4 3.4 0 0 0 3.4-3.4V7.4A3.4 3.4 0 0 0 16.6 4Z" />

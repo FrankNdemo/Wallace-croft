@@ -74,10 +74,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Wallace Croft - Innovate Forward" },
-      { name: "description", content: "Wallace Croft partners with organizations to drive business transformation through technology - consulting, engineering, cloud, AI and managed services." },
+      {
+        name: "description",
+        content:
+          "Wallace Croft partners with organizations to drive business transformation through technology - consulting, engineering, cloud, AI and managed services.",
+      },
       { name: "author", content: "Wallace Croft" },
       { property: "og:title", content: "Wallace Croft - Innovate Forward" },
-      { property: "og:description", content: "Driving business transformation through technology." },
+      {
+        property: "og:description",
+        content: "Driving business transformation through technology.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@WallaceCroft" },
@@ -91,6 +98,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://images.unsplash.com" },
+      { rel: "preconnect", href: "https://images.pexels.com" },
+      { rel: "preconnect", href: "https://www.broadcom.co.ke" },
+      { rel: "preconnect", href: "https://the-hub-pied.vercel.app" },
+      { rel: "preconnect", href: "https://rpfasixbozhsawdgbswy.supabase.co" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap",

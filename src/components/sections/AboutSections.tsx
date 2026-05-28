@@ -2,7 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BarChart3, Circle, Code2, Gauge, Layers, Quote, Sparkles, Square } from "lucide-react";
+import {
+  ArrowRight,
+  BarChart3,
+  Circle,
+  Code2,
+  Gauge,
+  Layers,
+  Quote,
+  Sparkles,
+  Square,
+} from "lucide-react";
 import { motion, useMotionValue } from "framer-motion";
 import { Reveal } from "@/components/ui-pro/Reveal";
 import mtakaLogo from "@/assets/partner-logo-mtaka-clean.webp";
@@ -112,12 +122,13 @@ export function AboutStory() {
         <Reveal>
           <div className="about-story-main">
             <h3 className="font-display text-[2.1rem] font-normal leading-[1.08] sm:text-[3rem]">
-              Wallace Croft is Kenya's digital,data and AI growth partner in web development, mobile, analytics and AI that drives real impact.
+              Wallace Croft is Kenya's digital,data and AI growth partner in web development,
+              mobile, analytics and AI that drives real impact.
             </h3>
             <div className="mt-7 grid gap-5 text-[0.95rem] leading-7 text-navy/70">
               <p>
-                Since 2023, we have been trusted by industry leaders, builders, and entrepreneurs
-                to create modern platforms, mobile solutions, and data foundations that help
+                Since 2023, we have been trusted by industry leaders, builders, and entrepreneurs to
+                create modern platforms, mobile solutions, and data foundations that help
                 organizations operate, compete, and grow with speed and confidence.
               </p>
               <p>
@@ -142,7 +153,11 @@ export function AboutStory() {
             <div className="about-trust-logos" aria-label="Trusted companies">
               {partnerLogos.slice(0, 3).map((logo) => (
                 <span key={logo.alt}>
-                  {"src" in logo ? <img src={logo.src} alt={logo.alt} loading="lazy" /> : logo.label}
+                  {"src" in logo ? (
+                    <img src={logo.src} alt={logo.alt} loading="lazy" />
+                  ) : (
+                    logo.label
+                  )}
                 </span>
               ))}
             </div>
@@ -162,7 +177,9 @@ export function AboutFounders() {
             <img
               src="/wallace-founders-clean.png"
               alt="Wallace Croft founders with purpose and systems leadership quotes"
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
               width={1555}
               height={972}
             />
@@ -328,7 +345,14 @@ export function AboutTeam() {
               <article key={item.title} className="about-team-card shrink-0">
                 {imageFirst ? (
                   <>
-                    <img src={item.img} alt={item.title} loading="lazy" width={1200} height={900} />
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      loading="eager"
+                      decoding="sync"
+                      width={1200}
+                      height={900}
+                    />
                     <div className="about-team-card__copy">
                       <h3>{item.title}</h3>
                       <p>{item.body}</p>
@@ -340,7 +364,14 @@ export function AboutTeam() {
                       <h3>{item.title}</h3>
                       <p>{item.body}</p>
                     </div>
-                    <img src={item.img} alt={item.title} loading="lazy" width={1200} height={900} />
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      loading="eager"
+                      decoding="sync"
+                      width={1200}
+                      height={900}
+                    />
                   </>
                 )}
               </article>
@@ -379,7 +410,9 @@ export function AboutWellnessTestimonial() {
                       className={photoReady ? "is-ready" : undefined}
                       src="/caroline-gichia.webp"
                       alt=""
-                      loading="lazy"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="sync"
                       onLoad={() => setPhotoReady(true)}
                       onError={() => setPhotoFailed(true)}
                     />
@@ -396,7 +429,8 @@ export function AboutWellnessTestimonial() {
                 className="about-wellness-quote__logo"
                 src={wellnessLogo}
                 alt="The Wellness Hub"
-                loading="lazy"
+                loading="eager"
+                decoding="sync"
               />
             </figcaption>
           </figure>
@@ -423,7 +457,12 @@ export function AboutCommunity() {
         </Reveal>
         <div className="about-community-grid mt-10">
           {communityImages.map((src, index) => (
-            <img key={src} src={src} alt={`Wallace Croft community moment ${index + 1}`} loading="lazy" />
+            <img
+              key={src}
+              src={src}
+              alt={`Wallace Croft community moment ${index + 1}`}
+              loading="lazy"
+            />
           ))}
         </div>
       </div>
@@ -450,7 +489,11 @@ export function AboutPartnersAwards() {
         <div className="about-partner-grid mt-10">
           {partnerLogos.map((partner) => (
             <span key={"src" in partner ? partner.alt : partner.label}>
-              {"src" in partner ? <img src={partner.src} alt={partner.alt} loading="lazy" /> : partner.label}
+              {"src" in partner ? (
+                <img src={partner.src} alt={partner.alt} loading="lazy" />
+              ) : (
+                partner.label
+              )}
             </span>
           ))}
         </div>
