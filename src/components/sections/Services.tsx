@@ -11,31 +11,37 @@ const teamAugmentationImage = "https://images.pexels.com/photos/3184465/pexels-p
 const offerings = [
   {
     icon: "strategy",
+    sectionId: "consulting-advisory",
     title: "Consulting & Advisory",
-    desc: "Strategic insight and expert guidance to help teams make confident decisions and build the right path to success.",
+    desc: "Strategy, technology, and innovation guidance for organizations navigating complexity and change.",
   },
   {
     icon: "agent",
+    sectionId: "managed-services",
     title: "Managed Services",
-    desc: "End-to-end management and support that ensures reliability, security, and performance so teams can focus on what matters.",
+    desc: "Proactive service management, monitoring, and optimization for stable always-on digital operations.",
   },
   {
     icon: "software",
+    sectionId: "engineering-development",
     title: "Engineering & Development",
-    desc: "Robust, scalable, and future-ready software solutions that solve real business challenges.",
+    desc: "Modern applications, platforms, automation, and digital products built for scale and measurable outcomes.",
   },
   {
     icon: "commerce",
+    sectionId: "integration-interoperability",
     title: "Integration & Interoperability",
-    desc: "Connected systems, applications, and data for a unified, efficient, and agile digital ecosystem.",
+    desc: "Connected systems, secure data movement, and enterprise integration frameworks that remove silos.",
   },
   {
     icon: "enterprise",
+    sectionId: "enterprise-transformation",
     title: "Enterprise Transformation",
-    desc: "Optimize operations and deliver scalable digital solutions that create lasting impact.",
+    desc: "Operating model, process, people, and technology change that creates sustainable enterprise value.",
   },
   {
     icon: "innovation",
+    sectionId: "data-cloud-ai",
     title: "Data, Cloud & AI",
     desc: "Practical intelligence, resilient platforms, and automation that help organizations innovate forward.",
   },
@@ -43,35 +49,110 @@ const offerings = [
 
 const serviceGroups = [
   {
-    id: "generative-ai",
-    slug: "generative-ai",
-    tab: "Generative AI",
-    title: "Generative AI",
-    body: "Build custom AI models and adaptive ChatGPT-native tooling.",
-    cta: "Explore Generative AI Services",
-    mark: "spark",
+    id: "consulting-advisory",
+    slug: "strategy",
+    tab: "Consulting",
+    title: "Consulting & Advisory",
+    body: "Navigate complexity with strategy, technology, and innovation guidance that turns transformation ambition into confident decisions.",
+    cta: "Explore Consulting & Advisory",
+    mark: "strategy",
+    image: "https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=1400",
     items: [
-      ["Content Generation", "Automate content production across marketing, support, and knowledge workflows."],
-      ["Code Generation", "Accelerate software delivery with assistants tuned to your engineering standards."],
-      ["Custom Generative AI Models", "Design models and retrieval systems that match your data, tone, and use cases."],
-      ["On-demand Analytics", "Surface instant insights from operational data through natural-language interfaces."],
-      ["ChatGPT Integration", "Connect secure conversational AI into internal tools, products, and customer journeys."],
+      ["Transformation strategy", "Frame the business case, priorities, risks, operating model, and practical roadmap for change."],
+      ["Technology value advisory", "Connect technology investments to measurable outcomes across cost, growth, resilience, and experience."],
+      ["Market and capability readiness", "Assess what the organization needs to compete in a digital-first economy."],
+      ["Innovation portfolio design", "Balance experimentation, operational efficiency, and delivery confidence across initiatives."],
+      ["Decision intelligence", "Use data, dashboards, and leadership cadences to improve strategic decision making."],
+      ["Execution governance", "Translate recommendations into owners, milestones, measures, and review rituals."],
     ],
   },
   {
-    id: "transformation",
+    id: "managed-services",
+    slug: "cloud-devops",
+    tab: "Managed Services",
+    title: "Managed Services",
+    body: "Operate with greater stability, efficiency, and confidence through proactive support, continuous monitoring, and performance-led operations.",
+    cta: "Explore Managed Services",
+    mark: "cloud",
+    image: "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    items: [
+      ["Proactive service operations", "Monitor systems, incidents, availability, and service quality before small issues become business disruption."],
+      ["Platform reliability", "Strengthen uptime, resilience, backups, release hygiene, observability, and recovery practices."],
+      ["Security and risk support", "Maintain access controls, patching rhythms, dependency review, secrets handling, and audit-friendly processes."],
+      ["Automation and optimization", "Reduce repetitive support work with workflow automation, alerts, runbooks, and performance tuning."],
+      ["Scalable operations", "Support growth without increasing operational risk through clear service models and operating standards."],
+      ["Always-on digital continuity", "Create support patterns that keep business-critical services available, visible, and improving."],
+    ],
+  },
+  {
+    id: "engineering-development",
+    slug: "product-development",
+    tab: "Engineering",
+    title: "Engineering & Development",
+    body: "Build modern digital capabilities that help organizations innovate faster, scale intelligently, and deliver exceptional experiences.",
+    cta: "Explore Engineering & Development",
+    mark: "diamond",
+    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    items: [
+      ["Digital product engineering", "Design and build web platforms, portals, dashboards, APIs, and automation tools around real workflows."],
+      ["Scalable architecture", "Create future-ready foundations for growth, maintainability, integration, security, and performance."],
+      ["Cloud-native development", "Use modern cloud, CI/CD, observability, and delivery practices to ship with confidence."],
+      ["Customer and employee experiences", "Improve task completion, adoption, self-service, and service quality through thoughtful product UX."],
+      ["Modernization engineering", "Refactor, rebuild, or extend legacy capabilities without unnecessary business disruption."],
+      ["Agile delivery", "Move from discovery to MVP to iteration with measurable releases and feedback loops."],
+    ],
+  },
+  {
+    id: "integration-interoperability",
+    slug: "commerce",
+    tab: "Integration",
+    title: "Integration & Interoperability",
+    body: "Create connected enterprises where systems, data, and people work together securely, intelligently, and without operational silos.",
+    cta: "Explore Integration & Interoperability",
+    mark: "bubbles",
+    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    items: [
+      ["Enterprise integration strategy", "Map systems, data flows, ownership, dependencies, and integration patterns for scalable connectivity."],
+      ["API and middleware design", "Connect modern and legacy platforms using secure APIs, events, workflows, and reusable integration layers."],
+      ["Data interoperability", "Move data across systems with validation, permissions, reconciliation, and decision-ready visibility."],
+      ["Legacy-to-modern bridges", "Extend existing platforms while reducing friction between old systems and new digital services."],
+      ["Operational visibility", "Unify customer, order, finance, support, and service information across business functions."],
+      ["Agility through connectivity", "Help teams collaborate faster by making enterprise systems communicate reliably."],
+    ],
+  },
+  {
+    id: "enterprise-transformation",
     slug: "transformation",
     tab: "Transformation",
     title: "Enterprise Transformation",
-    body: "Invest in digital initiatives that reduce costs and grow revenue.",
-    cta: "Explore Transformation Services",
+    body: "Redefine how the organization operates, innovates, and grows through aligned changes across strategy, operations, people, and technology.",
+    cta: "Explore Enterprise Transformation",
     mark: "orbit",
+    image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1400",
     items: [
-      ["Transformation Strategy", "Map priorities, operating models, and measurable roadmaps for enterprise change."],
-      ["Enterprise Modernization", "Upgrade legacy systems, integrations, and ERP-adjacent workflows without losing momentum."],
-      ["Digital Commerce", "Create connected B2B, B2C, and marketplace experiences that scale with demand."],
-      ["Cloud Acceleration", "Move critical workloads to reliable cloud foundations with governance and cost control."],
-      ["Talent & Culture", "Equip teams with the skills, rituals, and clarity to sustain transformation."],
+      ["Future enterprise design", "Clarify the operating model, digital capabilities, governance, and experience principles for what comes next."],
+      ["Modernization with continuity", "Sequence transformation so the business keeps running while systems and processes evolve."],
+      ["Operating model agility", "Shape roles, rituals, decision forums, and metrics that support speed and resilience."],
+      ["Change enablement", "Align leadership, teams, communication, training, and adoption measures around transformation outcomes."],
+      ["Value realization", "Connect enterprise initiatives to long-term performance, customer impact, and measurable business value."],
+      ["People, process, technology alignment", "Make transformation practical by bringing work design, platforms, and adoption into one plan."],
+    ],
+  },
+  {
+    id: "data-cloud-ai",
+    slug: "analytics",
+    tab: "Data, Cloud & AI",
+    title: "Data, Cloud & AI",
+    body: "Turn enterprise information, resilient platforms, and intelligent automation into practical advantage.",
+    cta: "Explore Data, Cloud & AI",
+    mark: "blocks",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    items: [
+      ["Data strategy", "Define architecture, governance, analytics priorities, and adoption plans."],
+      ["Decision intelligence", "Model trusted KPIs, dashboards, alerts, and leadership views around important choices."],
+      ["Cloud foundations", "Create reliable environments, releases, observability, and cost visibility for digital products."],
+      ["AI-assisted workflows", "Apply automation and AI where they improve service delivery, decisions, and productivity."],
+      ["Analytics activation", "Move insights into CRM, commerce, support, and operational workflows."],
     ],
   },
   {
@@ -112,7 +193,7 @@ const serviceGroups = [
     tab: "Innovation",
     title: "Technology Innovation",
     body: "Partner on strategy and delivery for products, platforms, and automation.",
-    cta: "Explore Product Development Services",
+    cta: "Explore Technology Innovation Services",
     mark: "diamond",
     items: [
       ["Discovery & Ideation", "Validate market needs, define users, and shape concepts into product bets."],
@@ -143,7 +224,7 @@ const serviceGroups = [
     tab: "Design",
     title: "Experience Design",
     body: "Craft simple, beautiful digital experiences people can adopt quickly.",
-    cta: "Explore Design Services",
+    cta: "Explore Experience Design Services",
     mark: "design",
     items: [
       ["User Research", "Understand customers, stakeholders, workflows, and adoption barriers."],
@@ -174,7 +255,7 @@ const serviceGroups = [
     tab: "Strategy",
     title: "Digital Strategy",
     body: "Connect business, product, and technology consulting from idea to impact.",
-    cta: "Explore Strategy Services",
+    cta: "Explore Digital Strategy Services",
     mark: "strategy",
     items: [
       ["Discovery & Ideation", "Define the problem, opportunity, customer need, and investment logic."],
@@ -182,6 +263,23 @@ const serviceGroups = [
       ["Audits & Assessments", "Evaluate systems, processes, experience quality, and readiness."],
       ["Strategy & Execution", "Translate direction into plans, owners, milestones, and measurable outcomes."],
       ["Product Management", "Shape roadmaps, delivery practices, and cross-functional product operations."],
+    ],
+  },
+  {
+    id: "generative-ai",
+    slug: "generative-ai",
+    tab: "Generative AI",
+    title: "Generative AI",
+    body: "Build custom AI models and adaptive ChatGPT-native tooling.",
+    cta: "Explore Generative AI Services",
+    mark: "spark",
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    items: [
+      ["Content Generation", "Automate content production across marketing, support, and knowledge workflows."],
+      ["Code Generation", "Accelerate software delivery with assistants tuned to your engineering standards."],
+      ["Custom Generative AI Models", "Design models and retrieval systems that match your data, tone, and use cases."],
+      ["On-demand Analytics", "Surface instant insights from operational data through natural-language interfaces."],
+      ["ChatGPT Integration", "Connect secure conversational AI into internal tools, products, and customer journeys."],
     ],
   },
 ] as const;
@@ -204,7 +302,7 @@ export function Services() {
     <section className="offerings-section bg-white py-16 lg:py-24">
       <div className="container-pro">
         <div className="offerings-panel">
-          <Reveal>
+          <Reveal className="offerings-heading-reveal">
             <div className="offerings-heading">
               <h2 className="font-display text-[1.9rem] font-normal leading-none text-navy sm:text-[2.45rem]">
                 Our Offerings
@@ -218,7 +316,7 @@ export function Services() {
           <div className="offerings-list">
             {offerings.map((service, index) => (
               <Reveal key={service.title} i={index % 3}>
-                <Link to="/services" className="offering-card group">
+                <a href={`/services#${service.sectionId}`} className="offering-card group">
                   <span className={`offering-mark offering-mark--${service.icon}`} aria-hidden>
                     <i />
                     <b />
@@ -228,7 +326,7 @@ export function Services() {
                     <strong>{service.title}</strong>
                     <small>{service.desc}</small>
                   </span>
-                </Link>
+                </a>
               </Reveal>
             ))}
           </div>
@@ -329,20 +427,20 @@ export function ServicesDeepDive() {
       <div className="services-deep__tabs-spacer" style={{ height: isTabsFixed ? tabsHeight : 0 }} aria-hidden />
 
       <div className="container-pro services-deep__body">
-        {serviceGroups.slice(0, 3).map((group, index) => (
+        {serviceGroups.slice(0, 5).map((group, index) => (
           <ServiceGroup key={group.id} group={group} index={index} />
         ))}
 
         <ServicesContactPanel />
 
-        {serviceGroups.slice(3, 6).map((group, index) => (
-          <ServiceGroup key={group.id} group={group} index={index + 3} />
+        {serviceGroups.slice(5, 8).map((group, index) => (
+          <ServiceGroup key={group.id} group={group} index={index + 5} />
         ))}
 
         <ServicesInsightCard />
 
-        {serviceGroups.slice(6).map((group, index) => (
-          <ServiceGroup key={group.id} group={group} index={index + 6} />
+        {serviceGroups.slice(8).map((group, index) => (
+          <ServiceGroup key={group.id} group={group} index={index + 8} />
         ))}
 
         <div className="services-deep__proof">
@@ -369,6 +467,8 @@ export function ServicesDeepDive() {
 }
 
 function ServiceGroup({ group, index }: { group: (typeof serviceGroups)[number]; index: number }) {
+  const image = "image" in group ? group.image : undefined;
+
   return (
     <Reveal i={index % 3}>
       <article className="services-group" id={group.id}>
@@ -381,8 +481,14 @@ function ServiceGroup({ group, index }: { group: (typeof serviceGroups)[number];
           <h3>{group.title}</h3>
           <p>{group.body}</p>
           <Link to="/services/$slug" params={{ slug: group.slug }}>
-            {group.cta} <ArrowRight className="h-3.5 w-3.5" />
+            <span>{group.cta}</span>
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
+          {image ? (
+            <figure className="services-group__visual">
+              <img src={image} alt={`${group.title} service visual`} loading="lazy" />
+            </figure>
+          ) : null}
         </aside>
         <div className="services-group__items">
           {group.items.map(([title, body]) => (

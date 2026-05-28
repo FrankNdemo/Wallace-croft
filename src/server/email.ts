@@ -89,14 +89,14 @@ function emailShell(preview: string, body: string) {
         <meta name="color-scheme" content="light only" />
         <title>${escapeHtml(preview)}</title>
       </head>
-      <body style="margin: 0; background: ${brand.surface}; font-family: Manrope, Aptos, 'Segoe UI', Arial, sans-serif;">
+      <body style="margin: 0; background: #ffffff; font-family: Manrope, Aptos, 'Segoe UI', Arial, sans-serif;">
         <div style="display: none; max-height: 0; overflow: hidden; opacity: 0;">${escapeHtml(preview)}</div>
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background: ${brand.surface}; padding: 32px 16px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="width: 100%; background: #ffffff; padding: 0;">
           <tr>
             <td align="center">
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 640px; overflow: hidden; background: #ffffff; border: 1px solid #e7eaf0;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 680px; overflow: hidden; background: #ffffff;">
                 <tr>
-                  <td style="background: ${brand.navyDeep}; padding: 28px 32px;">
+                  <td style="background: ${brand.navyDeep}; padding: 34px 28px 18px;">
                     <div style="color: #ffffff; font-size: 24px; font-weight: 800; line-height: 1; letter-spacing: 0;">
                       Wallace Croft<span style="display: inline-block; width: 7px; height: 7px; margin-left: 5px; vertical-align: top; background: ${brand.orange};"></span>
                     </div>
@@ -124,17 +124,16 @@ function adminEmailHtml(lead: Lead) {
   const message = escapeHtml(lead.message || "No message provided.").replaceAll("\n", "<br />");
 
   return emailShell(
-    `Admin lead alert: ${name}`,
+    `New Wallace Croft inquiry: ${name}`,
     `
       <tr>
-        <td style="padding: 34px 32px 12px;">
-          <div style="color: ${brand.orange}; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;">Admin notification</div>
-          <h1 style="margin: 12px 0 0; color: ${brand.navy}; font-size: 30px; line-height: 1.15;">New website inquiry from ${escapeHtml(name)}.</h1>
-          <p style="margin: 16px 0 0; color: ${brand.inkMuted}; font-size: 15px; line-height: 1.7;">This email is for the Wallace Croft team. Review the lead details below and follow up with the customer.</p>
+        <td style="padding: 30px 28px 12px;">
+          <h1 style="margin: 0; color: ${brand.navy}; font-size: 30px; line-height: 1.15;">New website inquiry from ${escapeHtml(name)}.</h1>
+          <p style="margin: 16px 0 0; color: ${brand.inkMuted}; font-size: 15px; line-height: 1.7;">A fresh project conversation just came in through the Wallace Croft website. Review the context below, spot the best next move, and reply while the request is still warm.</p>
         </td>
       </tr>
       <tr>
-        <td style="padding: 16px 32px 8px;">
+        <td style="padding: 16px 28px 8px;">
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
             ${detailRow("Lead ID", lead.id)}
             ${detailRow("Name", name)}
@@ -148,7 +147,7 @@ function adminEmailHtml(lead: Lead) {
         </td>
       </tr>
       <tr>
-        <td style="padding: 18px 32px 36px;">
+        <td style="padding: 18px 28px 36px;">
           <div style="border-left: 4px solid ${brand.orange}; background: ${brand.surface}; padding: 18px 20px; color: ${brand.navy}; font-size: 15px; line-height: 1.7;">${message}</div>
         </td>
       </tr>
@@ -160,17 +159,16 @@ function customerEmailHtml(lead: Lead) {
   const name = fullName(lead) || "there";
 
   return emailShell(
-    "Customer confirmation: Wallace Croft received your message",
+    "Wallace Croft received your message",
     `
       <tr>
-        <td style="padding: 36px 32px 14px;">
-          <div style="color: ${brand.orange}; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;">Customer confirmation</div>
-          <h1 style="margin: 12px 0 0; color: ${brand.navy}; font-size: 31px; line-height: 1.15;">Thanks, ${escapeHtml(name)}.</h1>
+        <td style="padding: 30px 28px 14px;">
+          <h1 style="margin: 0; color: ${brand.navy}; font-size: 31px; line-height: 1.15;">Thanks, ${escapeHtml(name)}.</h1>
           <p style="margin: 16px 0 0; color: ${brand.inkMuted}; font-size: 16px; line-height: 1.75;">We received your inquiry and the Wallace Croft team will review it shortly. If there is a project brief, timeline, or technical context to add, you can reply directly to this email.</p>
         </td>
       </tr>
       <tr>
-        <td style="padding: 14px 32px 36px;">
+        <td style="padding: 14px 28px 36px;">
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background: ${brand.surface}; border: 1px solid #e7eaf0;">
             <tr>
               <td style="padding: 20px;">
@@ -256,7 +254,7 @@ export async function sendLeadNotification(lead: Lead) {
     sendEmail({
       tag: "admin",
       to: adminRecipient,
-      subject: `[Admin] New Wallace Croft inquiry: ${fullName(lead) || lead.email}`,
+      subject: `New Wallace Croft inquiry: ${fullName(lead) || lead.email}`,
       html: adminEmailHtml(lead),
       replyTo: lead.email,
     }),
@@ -274,7 +272,7 @@ export async function sendLeadNotification(lead: Lead) {
   }
 
   if (customerResult.status === "rejected") {
-    console.error("Customer confirmation email failed", { leadId: lead.id, error: customerResult.reason });
+    console.error("Customer email failed", { leadId: lead.id, error: customerResult.reason });
   }
 
   return {
