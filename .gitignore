@@ -13,6 +13,7 @@ dist-ssr
 .edge-cdp-codex*/
 .edge-verify-*/
 .output
+.vercel/
 .vinxi
 .tanstack/**
 .nitro
