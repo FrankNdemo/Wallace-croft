@@ -494,8 +494,8 @@ function ContactNairobiMap() {
       <div className="contact-presence__map" aria-label="Wallace Croft location map showing Nairobi, Kenya">
         <img className="contact-presence__world" src={worldMap} alt="Blank world map" loading="lazy" />
         <svg className="contact-presence__overlay" viewBox="0 0 920 430" aria-hidden>
-          <path className="contact-presence__route" d="M553 224 C594 196 653 164 704 124" />
-          <circle className="contact-presence__africa-dot" cx="553" cy="224" r="6" />
+          <path className="contact-presence__route" d="M600 229 C632 200 666 164 704 124" />
+          <circle className="contact-presence__africa-dot" cx="600" cy="229" r="6" />
         </svg>
 
         <div className="contact-presence__kenya">

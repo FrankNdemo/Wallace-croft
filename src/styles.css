@@ -13150,7 +13150,11 @@ footer button:disabled {
   }
 
   .service-detail-hero__content h1 {
-    font-size: clamp(2.75rem, 16vw, 4.3rem);
+    max-width: 100%;
+    font-size: clamp(2.15rem, 11.5vw, 3.25rem);
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 
   .service-detail-hero__content span {
