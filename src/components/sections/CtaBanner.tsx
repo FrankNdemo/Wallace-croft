@@ -1,12 +1,18 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Mic, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Mic, Phone, Sparkles } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { Reveal } from "@/components/ui-pro/Reveal";
 import { submitContact } from "@/server-fns/contact";
 
-const chips = ["AI", "Data", "Cloud", "Commerce"];
+const contactDetails = {
+  emails: ["hello@wallacecroft.com", "team@wallacecroft.com", "sales@wallacecroft.com"],
+  phones: [
+    ["Kenya", "+254 114 470441"],
+    ["Kenya", "+254 710 372157"],
+  ],
+} as const;
 const worldMap = "https://commons.wikimedia.org/wiki/Special:FilePath/WorldMap-Blank-Noborders.svg";
 const kenyaMap = "https://commons.wikimedia.org/wiki/Special:FilePath/SVG-Koort_Kenia.svg";
 const nairobiImages = [
@@ -331,12 +337,28 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
                 Share the goal. We will reply with a clear first move for scalable digital solutions that create lasting impact.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                {chips.map((chip) => (
-                  <span key={chip} className="border border-navy/14 bg-white/48 px-4 py-2 text-xs text-navy/72">
-                    {chip}
-                  </span>
-                ))}
+              <div className="contact-direct mt-8" aria-label="Direct Wallace Croft contacts">
+                <div className="contact-direct__icon" aria-hidden>
+                  <Mail className="h-4 w-4" />
+                </div>
+                <div className="contact-direct__list">
+                  {contactDetails.emails.map((email) => (
+                    <a key={email} href={`mailto:${email}`}>
+                      {email}
+                    </a>
+                  ))}
+                </div>
+                <div className="contact-direct__icon" aria-hidden>
+                  <Phone className="h-4 w-4" />
+                </div>
+                <div className="contact-direct__list contact-direct__list--phones">
+                  {contactDetails.phones.map(([country, phone]) => (
+                    <a key={phone} href={`tel:${phone.replace(/\s+/g, "")}`}>
+                      <span>{country}</span>
+                      <strong>{phone}</strong>
+                    </a>
+                  ))}
+                </div>
               </div>
 
               <div className="contact-avatar mt-10" aria-hidden>
@@ -472,8 +494,8 @@ function ContactNairobiMap() {
       <div className="contact-presence__map" aria-label="Wallace Croft location map showing Nairobi, Kenya">
         <img className="contact-presence__world" src={worldMap} alt="Blank world map" loading="lazy" />
         <svg className="contact-presence__overlay" viewBox="0 0 920 430" aria-hidden>
-          <path className="contact-presence__route" d="M610 190 C644 176 676 150 704 124" />
-          <circle className="contact-presence__africa-dot" cx="610" cy="190" r="6" />
+          <path className="contact-presence__route" d="M553 224 C594 196 653 164 704 124" />
+          <circle className="contact-presence__africa-dot" cx="553" cy="224" r="6" />
         </svg>
 
         <div className="contact-presence__kenya">

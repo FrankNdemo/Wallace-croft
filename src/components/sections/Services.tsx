@@ -104,7 +104,7 @@ const serviceGroups = [
   },
   {
     id: "integration-interoperability",
-    slug: "commerce",
+    slug: "integration-interoperability",
     tab: "Integration",
     title: "Integration & Interoperability",
     body: "Create connected enterprises where systems, data, and people work together securely, intelligently, and without operational silos.",

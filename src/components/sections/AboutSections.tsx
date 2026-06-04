@@ -15,9 +15,10 @@ import {
 } from "lucide-react";
 import { motion, useMotionValue } from "framer-motion";
 import { Reveal } from "@/components/ui-pro/Reveal";
+import broadbandLogo from "@/assets/partner-logo-broadband-real.png";
+import jobuLogo from "@/assets/partner-logo-jobu-real.png";
 import mtakaLogo from "@/assets/partner-logo-mtaka-clean.webp";
-import broadbandLogo from "@/assets/partner-logo-broadband-clean.webp";
-import wellnessLogo from "@/assets/partner-logo-wellness-clean.webp";
+import wellnessLogo from "@/assets/partner-logo-wellness-floating.png";
 
 const values = [
   {
@@ -92,8 +93,9 @@ const communityImages = [
 ];
 
 const partnerLogos = [
+  { src: jobuLogo, alt: "JOBU" },
   { src: mtakaLogo, alt: "mTAKA" },
-  { src: broadbandLogo, alt: "Broadband" },
+  { src: broadbandLogo, alt: "Broadband Communication Network" },
   { src: wellnessLogo, alt: "The Wellness Hub" },
   { label: "CLOUD" },
   { label: "DATA" },
@@ -101,6 +103,8 @@ const partnerLogos = [
   { label: "AI OPS" },
   { label: "SECURE" },
 ];
+
+const aboutTrustLogos = partnerLogos.filter((logo) => "alt" in logo && logo.alt !== "mTAKA");
 
 const quickLinks = [
   {
@@ -112,6 +116,31 @@ const quickLinks = [
     to: "/case-studies",
     title: "Our Work",
     body: "Discover how we have helped businesses like yours reach their full potential.",
+  },
+] as const;
+
+const founderStories = [
+  {
+    quote: "We build with purpose and innovate with intention.",
+    body: "My mission is to design solutions that don't just solve problems - but create lasting impact for businesses and communities.",
+    image: "/founder-purpose-laptop.png",
+    alt: "Business leader working on a laptop",
+    imageClass: "about-founder-card__image--top",
+  },
+  {
+    quote: "Great systems don't happen by chance. They're built with vision and discipline.",
+    body: "I focus on building the left-brain systems and structures that give space for ideas, people, and teams to do their best work.",
+    image: "/founder-systems-real.jpeg",
+    alt: "Systems leader standing in a server room",
+    imageClass: "about-founder-card__image--middle",
+    reverse: true,
+  },
+  {
+    quote: "The future belongs to those who build with clarity and courage.",
+    body: "I partner with founders and organizations to turn bold ideas into sustainable, scalable realities.",
+    image: "/founder-clarity-real.png",
+    alt: "Business leader smiling in a blue striped shirt",
+    imageClass: "about-founder-card__image--bottom",
   },
 ] as const;
 
@@ -151,13 +180,9 @@ export function AboutStory() {
               mission-critical products and solutions.
             </p>
             <div className="about-trust-logos" aria-label="Trusted companies">
-              {partnerLogos.slice(0, 3).map((logo) => (
+              {aboutTrustLogos.map((logo) => (
                 <span key={logo.alt}>
-                  {"src" in logo ? (
-                    <img src={logo.src} alt={logo.alt} loading="lazy" />
-                  ) : (
-                    logo.label
-                  )}
+                  <img src={logo.src} alt={logo.alt} loading="lazy" />
                 </span>
               ))}
             </div>
@@ -170,21 +195,43 @@ export function AboutStory() {
 
 export function AboutFounders() {
   return (
-    <section className="about-founders">
-      <div className="container-pro">
+    <section className="about-founders bg-white text-navy" aria-label="Founder perspectives">
+      <div className="about-founders__heading container-pro">
         <Reveal>
-          <figure className="about-founders__art">
-            <img
-              src="/wallace-founders-clean.png"
-              alt="Wallace Croft founders with purpose and systems leadership quotes"
-              loading="eager"
-              fetchPriority="high"
-              decoding="sync"
-              width={1555}
-              height={972}
-            />
-          </figure>
+          <div>
+            <h2>The Minds Behind the Mission</h2>
+            <p>
+              Meet the professionals behind the ideas, systems, and innovations that power
+              meaningful transformation.
+            </p>
+          </div>
         </Reveal>
+      </div>
+
+      <div className="about-founders__inner">
+        {founderStories.map((story, index) => (
+          <Reveal key={story.quote} i={index}>
+            <article className={`about-founder-card${story.reverse ? " about-founder-card--reverse" : ""}`}>
+              <div className="about-founder-card__copy">
+                <span className="about-founder-card__quote-icon" aria-hidden>
+                  {"\u201c"}
+                </span>
+                <h2>{story.quote}</h2>
+                <span className="about-founder-card__rule" aria-hidden />
+                <p>{story.body}</p>
+              </div>
+              <figure className={`about-founder-card__image ${story.imageClass}`}>
+                <img
+                  src={story.image}
+                  alt={story.alt}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding={index === 0 ? "sync" : "async"}
+                />
+              </figure>
+            </article>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

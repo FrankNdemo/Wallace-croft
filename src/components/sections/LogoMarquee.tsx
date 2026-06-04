@@ -1,13 +1,15 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/ui-pro/Reveal";
+import broadbandLogo from "@/assets/partner-logo-broadband-real.png";
+import jobuLogo from "@/assets/partner-logo-jobu-real.png";
 import mtakaLogo from "@/assets/partner-logo-mtaka-clean.webp";
-import broadbandLogo from "@/assets/partner-logo-broadband-clean.webp";
-import wellnessLogo from "@/assets/partner-logo-wellness-clean.webp";
+import wellnessLogo from "@/assets/partner-logo-wellness-floating.png";
 
 const logos = [
+  { src: jobuLogo, alt: "JOBU", tone: "jobu" },
   { src: mtakaLogo, alt: "mTAKA", tone: "eco" },
-  { src: broadbandLogo, alt: "Broadband", tone: "network" },
+  { src: broadbandLogo, alt: "Broadband Communication Network", tone: "network" },
   { src: wellnessLogo, alt: "The Wellness Hub", tone: "wellness" },
 ];
 
