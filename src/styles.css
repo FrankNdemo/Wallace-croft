@@ -378,7 +378,9 @@
   background-image:
     radial-gradient(circle at 82% 30%, rgba(3, 12, 25, 0.2) 0 2px, transparent 3px),
     radial-gradient(circle at 74% 64%, rgba(242, 118, 34, 0.22) 0 2px, transparent 3px);
-  background-size: 34px 34px, 46px 46px;
+  background-size:
+    34px 34px,
+    46px 46px;
   opacity: 0.75;
   pointer-events: none;
 }
@@ -770,9 +772,7 @@
   gap: 1rem;
   margin: 0 1rem 1rem;
   border: 1px solid rgba(3, 12, 25, 0.14);
-  background:
-    radial-gradient(circle at 95% 20%, rgba(3, 12, 25, 0.12), transparent 34%),
-    #ffffff;
+  background: radial-gradient(circle at 95% 20%, rgba(3, 12, 25, 0.12), transparent 34%), #ffffff;
   padding: 0.95rem 1rem;
 }
 
@@ -801,8 +801,7 @@
   border: 1px solid rgba(6, 16, 38, 0.08);
   background:
     linear-gradient(to right, rgba(6, 16, 38, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(6, 16, 38, 0.06) 1px, transparent 1px),
-    #ffffff;
+    linear-gradient(to bottom, rgba(6, 16, 38, 0.06) 1px, transparent 1px), #ffffff;
   background-size: 42px 42px;
   padding: 1.1rem;
 }
@@ -815,13 +814,28 @@
   transition: transform 0.2s ease;
 }
 
-.team-preview__chart span:nth-child(1) { height: 34%; }
-.team-preview__chart span:nth-child(2) { height: 52%; }
-.team-preview__chart span:nth-child(3) { height: 45%; }
-.team-preview__chart span:nth-child(4) { height: 68%; }
-.team-preview__chart span:nth-child(5) { height: 58%; }
-.team-preview__chart span:nth-child(6) { height: 74%; }
-.team-preview__chart span:nth-child(7) { height: 92%; background: var(--orange); }
+.team-preview__chart span:nth-child(1) {
+  height: 34%;
+}
+.team-preview__chart span:nth-child(2) {
+  height: 52%;
+}
+.team-preview__chart span:nth-child(3) {
+  height: 45%;
+}
+.team-preview__chart span:nth-child(4) {
+  height: 68%;
+}
+.team-preview__chart span:nth-child(5) {
+  height: 58%;
+}
+.team-preview__chart span:nth-child(6) {
+  height: 74%;
+}
+.team-preview__chart span:nth-child(7) {
+  height: 92%;
+  background: var(--orange);
+}
 
 .team-preview__footer {
   display: grid;
@@ -1106,8 +1120,18 @@
   display: block;
   width: min(116%, 860px);
   margin-left: auto;
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 62%, rgba(0, 0, 0, 0.9) 78%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, #000 62%, rgba(0, 0, 0, 0.9) 78%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 62%,
+    rgba(0, 0, 0, 0.9) 78%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 62%,
+    rgba(0, 0, 0, 0.9) 78%,
+    transparent 100%
+  );
   filter: drop-shadow(0 34px 56px rgba(0, 0, 0, 0.48));
   animation: approach-float 7s ease-in-out infinite;
 }
@@ -1294,10 +1318,26 @@
     rgba(255, 176, 103, 0.12);
 }
 
-.approach-orbit__petal--one { left: 16%; top: 14%; rotate: 45deg; }
-.approach-orbit__petal--two { right: 16%; top: 14%; rotate: 135deg; }
-.approach-orbit__petal--three { right: 16%; bottom: 14%; rotate: 225deg; }
-.approach-orbit__petal--four { left: 16%; bottom: 14%; rotate: 315deg; }
+.approach-orbit__petal--one {
+  left: 16%;
+  top: 14%;
+  rotate: 45deg;
+}
+.approach-orbit__petal--two {
+  right: 16%;
+  top: 14%;
+  rotate: 135deg;
+}
+.approach-orbit__petal--three {
+  right: 16%;
+  bottom: 14%;
+  rotate: 225deg;
+}
+.approach-orbit__petal--four {
+  left: 16%;
+  bottom: 14%;
+  rotate: 315deg;
+}
 
 .approach-orbit__core {
   position: absolute;
@@ -1325,10 +1365,30 @@
   max-width: 18rem;
 }
 
-.approach-orbit__node--one { grid-area: talent; align-self: start; justify-self: start; margin-top: 1.5rem; }
-.approach-orbit__node--two { grid-area: tactics; align-self: start; justify-self: end; margin-top: 1.5rem; }
-.approach-orbit__node--three { grid-area: tools; align-self: end; justify-self: start; margin-bottom: 1.5rem; }
-.approach-orbit__node--four { grid-area: technology; align-self: end; justify-self: end; margin-bottom: 1.5rem; }
+.approach-orbit__node--one {
+  grid-area: talent;
+  align-self: start;
+  justify-self: start;
+  margin-top: 1.5rem;
+}
+.approach-orbit__node--two {
+  grid-area: tactics;
+  align-self: start;
+  justify-self: end;
+  margin-top: 1.5rem;
+}
+.approach-orbit__node--three {
+  grid-area: tools;
+  align-self: end;
+  justify-self: start;
+  margin-bottom: 1.5rem;
+}
+.approach-orbit__node--four {
+  grid-area: technology;
+  align-self: end;
+  justify-self: end;
+  margin-bottom: 1.5rem;
+}
 
 .approach-orbit__node span {
   position: relative;
@@ -3001,13 +3061,12 @@ footer button:disabled {
   width: 230px;
   height: 230px;
   border-radius: 50%;
-  background:
-    repeating-radial-gradient(
-      circle at center,
-      transparent 0 7px,
-      rgba(243, 127, 33, 0.42) 8px 9px,
-      transparent 10px 14px
-    );
+  background: repeating-radial-gradient(
+    circle at center,
+    transparent 0 7px,
+    rgba(243, 127, 33, 0.42) 8px 9px,
+    transparent 10px 14px
+  );
   opacity: 0.72;
   pointer-events: none;
 }
@@ -3636,90 +3695,15 @@ footer button:disabled {
   width: min(100%, 980px);
   min-height: 0;
   margin-inline: auto;
-  overflow: visible;
+  overflow: hidden;
 }
 
-.contact-presence__world {
+.contact-presence__world-map {
   display: block;
   width: 100%;
   height: 100%;
   margin-inline: auto;
-  overflow: visible;
   object-fit: contain;
-  opacity: 0.22;
-  filter: grayscale(1) contrast(1.25);
-}
-
-.contact-presence__overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.contact-presence__route {
-  fill: none;
-  stroke: rgba(242, 118, 34, 0.72);
-  stroke-dasharray: 5 8;
-  stroke-linecap: round;
-  stroke-width: 1.6;
-}
-
-.contact-presence__africa-dot {
-  fill: var(--orange);
-  filter: drop-shadow(0 0 8px rgba(242, 118, 34, 0.48));
-}
-
-.contact-presence__kenya {
-  position: absolute;
-  top: 0;
-  right: min(4vw, 48px);
-  width: clamp(136px, 19vw, 204px);
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  transform: rotate(4deg);
-  filter: drop-shadow(0 24px 28px rgba(15, 23, 42, 0.16));
-}
-
-.contact-presence__kenya img {
-  display: block;
-  width: 100%;
-  opacity: 0.88;
-  filter: grayscale(1) contrast(1.15);
-}
-
-.contact-presence__nairobi-pin {
-  position: absolute;
-  left: 42%;
-  top: 64%;
-  width: 0.9rem;
-  height: 0.9rem;
-  transform: translate(-50%, -50%);
-  border: 3px solid #ffffff;
-  border-radius: 50%;
-  fill: var(--orange);
-  background: var(--orange);
-  box-shadow: 0 0 0 7px rgba(242, 118, 34, 0.18);
-}
-
-.contact-presence__nairobi-label {
-  position: absolute;
-  left: 43.5%;
-  top: 64%;
-  transform: translate(0.8rem, -50%);
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  background: #ffffff;
-  padding: 0.42rem 0.62rem;
-  color: var(--navy);
-  font-size: 0.72rem;
-  font-weight: 500;
-  line-height: 1;
-  white-space: nowrap;
-  box-shadow: 0 18px 30px -24px rgba(15, 23, 42, 0.45);
 }
 
 .contact-presence__gallery {
@@ -4248,7 +4232,11 @@ footer button:disabled {
   width: 260px;
   height: 220px;
   border-radius: 50%;
-  background: repeating-radial-gradient(ellipse at center, transparent 0 9px, rgba(242, 118, 34, 0.76) 10px 11px);
+  background: repeating-radial-gradient(
+    ellipse at center,
+    transparent 0 9px,
+    rgba(242, 118, 34, 0.76) 10px 11px
+  );
   transform: rotate(-25deg);
   opacity: 0.7;
 }
@@ -6359,13 +6347,12 @@ footer button:disabled {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background:
-    repeating-radial-gradient(
-      circle at center,
-      transparent 0 10px,
-      rgba(243, 127, 33, 0.2) 11px 12px,
-      transparent 13px 20px
-    );
+  background: repeating-radial-gradient(
+    circle at center,
+    transparent 0 10px,
+    rgba(243, 127, 33, 0.2) 11px 12px,
+    transparent 13px 20px
+  );
   pointer-events: none;
 }
 
@@ -7268,13 +7255,12 @@ footer button:disabled {
   width: min(52vw, 560px);
   height: min(52vw, 560px);
   border-radius: 50%;
-  background:
-    repeating-radial-gradient(
-      circle at 50% 50%,
-      transparent 0 16px,
-      rgba(242, 118, 34, 0.36) 17px 18px,
-      transparent 19px 31px
-    );
+  background: repeating-radial-gradient(
+    circle at 50% 50%,
+    transparent 0 16px,
+    rgba(242, 118, 34, 0.36) 17px 18px,
+    transparent 19px 31px
+  );
   opacity: 0.8;
   transform: rotate(-8deg);
   pointer-events: none;
@@ -8039,8 +8025,18 @@ footer button:disabled {
   max-height: none;
   mix-blend-mode: screen;
   filter: brightness(0.88) contrast(1.08) saturate(1.05);
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 44%, rgba(0, 0, 0, 0.78) 60%, transparent 84%);
-  mask-image: radial-gradient(ellipse at center, #000 44%, rgba(0, 0, 0, 0.78) 60%, transparent 84%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 44%,
+    rgba(0, 0, 0, 0.78) 60%,
+    transparent 84%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 44%,
+    rgba(0, 0, 0, 0.78) 60%,
+    transparent 84%
+  );
 }
 
 .services-page .page-hero-media__frame:nth-child(2) .page-hero-media__object {
@@ -8093,8 +8089,18 @@ footer button:disabled {
 .page-hero-media--case .page-hero-media__object,
 .page-hero-media--mark .page-hero-media__object,
 .page-hero-media--advisor .page-hero-media__object {
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 54%, rgba(0, 0, 0, 0.82) 68%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, #000 54%, rgba(0, 0, 0, 0.82) 68%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 54%,
+    rgba(0, 0, 0, 0.82) 68%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 54%,
+    rgba(0, 0, 0, 0.82) 68%,
+    transparent 100%
+  );
 }
 
 @keyframes page-hero-frame-flip {
@@ -8433,7 +8439,12 @@ footer button:disabled {
   inset: 0;
   background:
     radial-gradient(circle at 78% 48%, rgba(242, 118, 34, 0.18), transparent 24%),
-    linear-gradient(90deg, rgba(2, 4, 10, 0.98) 0%, rgba(2, 4, 10, 0.86) 52%, rgba(2, 4, 10, 0.62) 100%),
+    linear-gradient(
+      90deg,
+      rgba(2, 4, 10, 0.98) 0%,
+      rgba(2, 4, 10, 0.86) 52%,
+      rgba(2, 4, 10, 0.62) 100%
+    ),
     linear-gradient(180deg, rgba(2, 4, 10, 0.45), #02040a);
 }
 
@@ -8632,7 +8643,11 @@ footer button:disabled {
   background:
     radial-gradient(circle at 90% 10%, rgba(242, 118, 34, 0.2), transparent 34%),
     rgba(255, 255, 255, 0.92);
-  background-size: 38px 38px, 38px 38px, 100% 100%, 100% 100%;
+  background-size:
+    38px 38px,
+    38px 38px,
+    100% 100%,
+    100% 100%;
   padding: clamp(1rem, 2vw, 1.4rem);
   backdrop-filter: blur(16px);
 }
@@ -8680,7 +8695,18 @@ footer button:disabled {
 .service-overview-visual--analytics figcaption {
   background:
     linear-gradient(180deg, transparent 0 68%, rgba(242, 118, 34, 0.14) 68% 100%),
-    linear-gradient(90deg, rgba(242, 118, 34, 0.24) 0 11%, transparent 11% 18%, rgba(255, 176, 103, 0.36) 18% 29%, transparent 29% 38%, rgba(242, 118, 34, 0.24) 38% 52%, transparent 52% 62%, rgba(255, 176, 103, 0.36) 62% 76%, transparent 76% 85%, rgba(242, 118, 34, 0.24) 85% 100%),
+    linear-gradient(
+      90deg,
+      rgba(242, 118, 34, 0.24) 0 11%,
+      transparent 11% 18%,
+      rgba(255, 176, 103, 0.36) 18% 29%,
+      transparent 29% 38%,
+      rgba(242, 118, 34, 0.24) 38% 52%,
+      transparent 52% 62%,
+      rgba(255, 176, 103, 0.36) 62% 76%,
+      transparent 76% 85%,
+      rgba(242, 118, 34, 0.24) 85% 100%
+    ),
     rgba(255, 255, 255, 0.94);
 }
 
@@ -8845,9 +8871,17 @@ footer button:disabled {
 .service-experience--layout-map .service-experience-visual {
   min-height: clamp(430px, 48vw, 600px);
   background:
-    linear-gradient(90deg, transparent 24%, rgba(15, 23, 42, 0.08) 24% 25%, transparent 25% 49%, rgba(15, 23, 42, 0.08) 49% 50%, transparent 50% 74%, rgba(15, 23, 42, 0.08) 74% 75%, transparent 75%),
-    radial-gradient(circle at 24% 24%, var(--experience-accent-soft), transparent 28%),
-    #fffaf5;
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      rgba(15, 23, 42, 0.08) 24% 25%,
+      transparent 25% 49%,
+      rgba(15, 23, 42, 0.08) 49% 50%,
+      transparent 50% 74%,
+      rgba(15, 23, 42, 0.08) 74% 75%,
+      transparent 75%
+    ),
+    radial-gradient(circle at 24% 24%, var(--experience-accent-soft), transparent 28%), #fffaf5;
 }
 
 .service-experience--layout-dashboard .service-experience-visual {
@@ -8856,25 +8890,32 @@ footer button:disabled {
   background:
     linear-gradient(rgba(15, 23, 42, 0.055) 1px, transparent 1px),
     linear-gradient(90deg, rgba(15, 23, 42, 0.055) 1px, transparent 1px),
-    radial-gradient(circle at 70% 26%, var(--experience-accent-soft), transparent 34%),
-    #ffffff;
-  background-size: 100% 100%, 44px 44px, 100% 100%, 100% 100%;
+    radial-gradient(circle at 70% 26%, var(--experience-accent-soft), transparent 34%), #ffffff;
+  background-size:
+    100% 100%,
+    44px 44px,
+    100% 100%,
+    100% 100%;
 }
 
 .service-experience--layout-checkout .service-experience-visual {
   border-radius: 0 0 4rem 0;
   background:
     linear-gradient(180deg, rgba(242, 118, 34, 0.08), transparent 46%),
-    radial-gradient(circle at 28% 34%, var(--experience-accent-soft), transparent 26%),
-    #ffffff;
+    radial-gradient(circle at 28% 34%, var(--experience-accent-soft), transparent 26%), #ffffff;
 }
 
 .service-experience--layout-product .service-experience-visual {
   clip-path: polygon(0 0, 100% 0, 100% 88%, 86% 100%, 0 100%);
   background:
-    conic-gradient(from 90deg at 78% 26%, rgba(242, 118, 34, 0.28), transparent 18%, rgba(15, 23, 42, 0.08) 24%, transparent 34%),
-    radial-gradient(circle at 32% 55%, var(--experience-accent-soft), transparent 30%),
-    #fffaf5;
+    conic-gradient(
+      from 90deg at 78% 26%,
+      rgba(242, 118, 34, 0.28),
+      transparent 18%,
+      rgba(15, 23, 42, 0.08) 24%,
+      transparent 34%
+    ),
+    radial-gradient(circle at 32% 55%, var(--experience-accent-soft), transparent 30%), #fffaf5;
 }
 
 .service-experience--layout-mobile .service-experience-visual {
@@ -8885,24 +8926,32 @@ footer button:disabled {
   border-radius: 2.2rem;
   background:
     linear-gradient(90deg, transparent 44%, rgba(15, 23, 42, 0.08) 44% 56%, transparent 56%),
-    radial-gradient(circle at 50% 20%, var(--experience-accent-soft), transparent 24%),
-    #ffffff;
+    radial-gradient(circle at 50% 20%, var(--experience-accent-soft), transparent 24%), #ffffff;
 }
 
 .service-experience--layout-studio .service-experience-visual {
   transform: rotate(-1.5deg);
   background:
     linear-gradient(135deg, rgba(242, 118, 34, 0.12) 0 18%, transparent 18% 100%),
-    radial-gradient(circle at 78% 72%, var(--experience-accent-soft), transparent 32%),
-    #ffffff;
+    radial-gradient(circle at 78% 72%, var(--experience-accent-soft), transparent 32%), #ffffff;
 }
 
 .service-experience--layout-pipeline .service-experience-visual {
   min-height: clamp(300px, 34vw, 420px);
   background:
-    linear-gradient(90deg, transparent 0 18%, rgba(242, 118, 34, 0.22) 18% 19%, transparent 19% 39%, rgba(242, 118, 34, 0.22) 39% 40%, transparent 40% 60%, rgba(242, 118, 34, 0.22) 60% 61%, transparent 61% 82%, rgba(242, 118, 34, 0.22) 82% 83%, transparent 83%),
-    radial-gradient(circle at 50% 50%, var(--experience-accent-soft), transparent 32%),
-    #ffffff;
+    linear-gradient(
+      90deg,
+      transparent 0 18%,
+      rgba(242, 118, 34, 0.22) 18% 19%,
+      transparent 19% 39%,
+      rgba(242, 118, 34, 0.22) 39% 40%,
+      transparent 40% 60%,
+      rgba(242, 118, 34, 0.22) 60% 61%,
+      transparent 61% 82%,
+      rgba(242, 118, 34, 0.22) 82% 83%,
+      transparent 83%
+    ),
+    radial-gradient(circle at 50% 50%, var(--experience-accent-soft), transparent 32%), #ffffff;
 }
 
 .service-experience--layout-board .service-experience__copy {
@@ -9051,7 +9100,18 @@ footer button:disabled {
   margin-top: 1rem;
   background:
     linear-gradient(180deg, transparent 0 62%, rgba(242, 118, 34, 0.22) 62% 100%),
-    linear-gradient(90deg, #f27622 0 12%, transparent 12% 18%, #ffb067 18% 34%, transparent 34% 42%, #f27622 42% 58%, transparent 58% 66%, #ffb067 66% 78%, transparent 78% 84%, #f27622 84% 100%);
+    linear-gradient(
+      90deg,
+      #f27622 0 12%,
+      transparent 12% 18%,
+      #ffb067 18% 34%,
+      transparent 34% 42%,
+      #f27622 42% 58%,
+      transparent 58% 66%,
+      #ffb067 66% 78%,
+      transparent 78% 84%,
+      #f27622 84% 100%
+    );
 }
 
 .service-experience--layout-checkout .service-experience-visual__screen {
@@ -9228,8 +9288,7 @@ footer button:disabled {
 .service-topics article {
   min-height: 230px;
   background:
-    radial-gradient(circle at 92% 8%, var(--experience-accent-soft), transparent 32%),
-    #ffffff;
+    radial-gradient(circle at 92% 8%, var(--experience-accent-soft), transparent 32%), #ffffff;
   padding: clamp(1.25rem, 2.4vw, 2rem);
 }
 
@@ -9266,8 +9325,7 @@ footer button:disabled {
   min-height: 300px;
   background:
     linear-gradient(90deg, rgba(242, 118, 34, 0.12), transparent 42%),
-    radial-gradient(circle at 78% 20%, rgba(15, 23, 42, 0.08), transparent 28%),
-    #ffffff;
+    radial-gradient(circle at 78% 20%, rgba(15, 23, 42, 0.08), transparent 28%), #ffffff;
 }
 
 .service-experience--layout-map .service-topics {
@@ -9396,9 +9454,7 @@ footer button:disabled {
 
 .service-experience--layout-studio .service-topics article {
   border: 1px solid rgba(15, 23, 42, 0.13);
-  background:
-    linear-gradient(180deg, rgba(242, 118, 34, 0.08), transparent),
-    #ffffff;
+  background: linear-gradient(180deg, rgba(242, 118, 34, 0.08), transparent), #ffffff;
 }
 
 .service-experience--layout-studio .service-topics article:nth-child(1) {
@@ -9645,9 +9701,12 @@ footer button:disabled {
   background:
     linear-gradient(rgba(15, 23, 42, 0.055) 1px, transparent 1px),
     linear-gradient(90deg, rgba(15, 23, 42, 0.055) 1px, transparent 1px),
-    radial-gradient(circle at 74% 22%, rgba(242, 118, 34, 0.16), transparent 30%),
-    #ffffff;
-  background-size: 42px 42px, 42px 42px, 100% 100%, 100% 100%;
+    radial-gradient(circle at 74% 22%, rgba(242, 118, 34, 0.16), transparent 30%), #ffffff;
+  background-size:
+    42px 42px,
+    42px 42px,
+    100% 100%,
+    100% 100%;
   padding: clamp(1.2rem, 3vw, 2rem);
 }
 
@@ -9774,8 +9833,7 @@ footer button:disabled {
   overflow: auto;
   border-left: 1px solid rgba(15, 23, 42, 0.13);
   border-top: 0;
-  background:
-    linear-gradient(180deg, #101827, #172033);
+  background: linear-gradient(180deg, #101827, #172033);
   color: rgba(255, 255, 255, 0.78);
 }
 
@@ -9938,7 +9996,18 @@ footer button:disabled {
   height: 220px;
   background:
     linear-gradient(180deg, transparent 0 70%, rgba(242, 118, 34, 0.28) 70% 100%),
-    linear-gradient(90deg, #f27622 0 10%, transparent 10% 16%, #ffb067 16% 28%, transparent 28% 34%, #f27622 34% 52%, transparent 52% 60%, #ffb067 60% 74%, transparent 74% 82%, #f27622 82% 100%);
+    linear-gradient(
+      90deg,
+      #f27622 0 10%,
+      transparent 10% 16%,
+      #ffb067 16% 28%,
+      transparent 28% 34%,
+      #f27622 34% 52%,
+      transparent 52% 60%,
+      #ffb067 60% 74%,
+      transparent 74% 82%,
+      #f27622 82% 100%
+    );
 }
 
 .service-dashboard-layout .service-topic-rail {
@@ -10831,20 +10900,16 @@ footer button:disabled {
 
 .perspective-visual--assistant {
   background:
-    radial-gradient(circle at 24% 18%, rgba(242, 118, 34, 0.18), transparent 28%),
-    #e8f6ff;
+    radial-gradient(circle at 24% 18%, rgba(242, 118, 34, 0.18), transparent 28%), #e8f6ff;
 }
 
 .perspective-visual--guide {
-  background:
-    radial-gradient(circle at 76% 20%, rgba(3, 12, 25, 0.14), transparent 30%),
-    #fff1df;
+  background: radial-gradient(circle at 76% 20%, rgba(3, 12, 25, 0.14), transparent 30%), #fff1df;
 }
 
 .perspective-visual--usecases {
   background:
-    radial-gradient(circle at 20% 76%, rgba(53, 201, 136, 0.16), transparent 32%),
-    #f3ecff;
+    radial-gradient(circle at 20% 76%, rgba(53, 201, 136, 0.16), transparent 32%), #f3ecff;
 }
 
 .perspective-visual__halo,
@@ -10911,9 +10976,7 @@ footer button:disabled {
 
 .hero-spiral {
   transform-origin: center;
-  filter:
-    drop-shadow(0 0 18px rgba(242, 118, 34, 0.42))
-    drop-shadow(0 0 26px rgba(3, 12, 25, 0.22));
+  filter: drop-shadow(0 0 18px rgba(242, 118, 34, 0.42)) drop-shadow(0 0 26px rgba(3, 12, 25, 0.22));
   will-change: transform, opacity;
 }
 
@@ -14976,4 +15039,3 @@ footer button:disabled {
     width: min(62%, 820px);
   }
 }
-

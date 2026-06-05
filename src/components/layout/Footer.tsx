@@ -5,7 +5,7 @@ import { useState, type FormEvent } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { subscribeNewsletter } from "@/server-fns/newsletter";
 
-const contactEmail = "ndemofrank1@gmail.com";
+const contactEmail = "ndemofrank@wallacecroft.com";
 
 const cols = [
   {
@@ -82,16 +82,25 @@ export function Footer() {
           <div className="max-w-md">
             <Logo light />
             <p className="mt-5 text-sm font-medium leading-7 text-white/90">
-              Wallace Croft partners with enterprises to design, build, and operate the systems behind durable transformation.
+              Wallace Croft partners with enterprises to design, build, and operate the systems
+              behind durable transformation.
             </p>
-            <form className="mt-7 flex max-w-sm overflow-hidden border border-white/18 bg-white/[0.03]" method="post" onSubmit={handleSubscribe}>
+            <form
+              className="mt-7 flex max-w-sm overflow-hidden border border-white/18 bg-white/[0.03]"
+              method="post"
+              onSubmit={handleSubscribe}
+            >
               <input
                 name="email"
                 type="email"
                 placeholder="Work email"
                 className="flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-white/78"
               />
-              <button type="submit" disabled={emailState === "submitting"} className="flex items-center gap-1 bg-orange px-4 text-sm font-medium text-white transition hover:bg-orange-soft">
+              <button
+                type="submit"
+                disabled={emailState === "submitting"}
+                className="flex items-center gap-1 bg-orange px-4 text-sm font-medium text-white transition hover:bg-orange-soft"
+              >
                 {emailState === "submitting" ? (
                   <>
                     <span className="submit-spinner" aria-hidden />
@@ -109,7 +118,9 @@ export function Footer() {
 
           {cols.map((col) => (
             <div key={col.title}>
-              <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/72">{col.title}</h4>
+              <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/72">
+                {col.title}
+              </h4>
               <ul className="mt-5 space-y-3 text-sm">
                 {col.items.map((item) => (
                   <li key={item.label}>
@@ -120,7 +131,10 @@ export function Footer() {
                 ))}
                 {col.title === "Company" ? (
                   <li>
-                    <a href={`mailto:${contactEmail}`} className="text-white/92 transition hover:text-orange">
+                    <a
+                      href={`mailto:${contactEmail}`}
+                      className="text-white/92 transition hover:text-orange"
+                    >
                       {contactEmail}
                     </a>
                   </li>

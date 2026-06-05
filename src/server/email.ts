@@ -1,6 +1,6 @@
 import "@tanstack/react-start/server-only";
 
-import { defaultContactEmail } from "./config";
+import { defaultContactEmail, defaultLeadNotificationEmails } from "./config";
 import type { ContactInput } from "@/lib/validation";
 
 const brand = {
@@ -12,7 +12,17 @@ const brand = {
   surface: "#f8fafc",
 };
 
-type Lead = ContactInput & { id: string };
+type LeadAttachment = {
+  name: string;
+  type: string;
+  size: number;
+  content: string;
+};
+
+type Lead = Omit<ContactInput, "attachment"> & {
+  id: string;
+  attachment?: LeadAttachment;
+};
 
 type EmailPayload = {
   to: string | string[];
@@ -20,6 +30,7 @@ type EmailPayload = {
   html: string;
   replyTo?: string;
   tag: "admin" | "customer";
+  attachments?: LeadAttachment[];
 };
 
 type BrevoAddress = {
@@ -183,9 +194,9 @@ function customerEmailHtml(lead: Lead) {
   );
 }
 
-async function sendEmail({ to, subject, html, replyTo, tag }: EmailPayload) {
+async function sendEmail({ to, subject, html, replyTo, tag, attachments = [] }: EmailPayload) {
   const apiKey = process.env.BREVO_API_KEY;
-  const from = process.env.EMAIL_FROM ?? "Wallace Croft <ndemofrank1@gmail.com>";
+  const from = process.env.EMAIL_FROM ?? "Wallace Croft <ndemofrank@wallacecroft.com>";
   const recipients = normalizeRecipients(to);
 
   if (!apiKey) {
@@ -219,6 +230,14 @@ async function sendEmail({ to, subject, html, replyTo, tag }: EmailPayload) {
       subject,
       htmlContent: html,
       ...(replyTo ? { replyTo: parseEmailAddress(replyTo) } : {}),
+      ...(attachments.length
+        ? {
+            attachment: attachments.map((attachment) => ({
+              name: attachment.name,
+              content: attachment.content,
+            })),
+          }
+        : {}),
     }),
   });
 
@@ -238,7 +257,7 @@ async function sendEmail({ to, subject, html, replyTo, tag }: EmailPayload) {
 }
 
 export async function sendLeadNotification(lead: Lead) {
-  const adminRecipient = process.env.LEAD_NOTIFICATION_EMAIL ?? defaultContactEmail;
+  const adminRecipient = process.env.LEAD_NOTIFICATION_EMAIL ?? [...defaultLeadNotificationEmails];
   const senderReplyAddress = process.env.DEFAULT_CONTACT_EMAIL ?? defaultContactEmail;
   const customerRecipient = lead.email.trim();
   const failedResult = { ok: false, reason: "send_failed" };
@@ -257,6 +276,7 @@ export async function sendLeadNotification(lead: Lead) {
       subject: `New Wallace Croft inquiry: ${fullName(lead) || lead.email}`,
       html: adminEmailHtml(lead),
       replyTo: lead.email,
+      attachments: lead.attachment ? [lead.attachment] : [],
     }),
     sendEmail({
       tag: "customer",

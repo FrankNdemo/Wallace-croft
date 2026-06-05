@@ -7,14 +7,12 @@ import { Reveal } from "@/components/ui-pro/Reveal";
 import { submitContact } from "@/server-fns/contact";
 
 const contactDetails = {
-  emails: ["hello@wallacecroft.com", "team@wallacecroft.com", "sales@wallacecroft.com"],
+  emails: ["sales@wallacecroft.com", "alvisnjenga@wallacecroft.com", "ndemofrank@wallacecroft.com"],
   phones: [
     ["Kenya", "+254 114 470441"],
     ["Kenya", "+254 710 372157"],
   ],
 } as const;
-const worldMap = "https://commons.wikimedia.org/wiki/Special:FilePath/WorldMap-Blank-Noborders.svg";
-const kenyaMap = "https://commons.wikimedia.org/wiki/Special:FilePath/SVG-Koort_Kenia.svg";
 const nairobiImages = [
   {
     src: "https://commons.wikimedia.org/wiki/Special:FilePath/KICC_Nairobi.jpg?width=1200",
@@ -263,9 +261,74 @@ const countryDialOptions = [
   ["ZM", "Zambia", "+260"],
   ["ZW", "Zimbabwe", "+263"],
 ] as const;
+const briefFileAccept = ".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.txt";
+const briefFileTypes = new Set([
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "application/vnd.ms-excel",
+  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "image/png",
+  "image/jpeg",
+  "text/plain",
+]);
+const briefFileTypeByExtension: Record<string, string> = {
+  pdf: "application/pdf",
+  doc: "application/msword",
+  docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  xls: "application/vnd.ms-excel",
+  xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  png: "image/png",
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  txt: "text/plain",
+};
+const maxBriefFileSize = 5 * 1024 * 1024;
 
 function countryFlagUrl(code: string) {
   return `https://flagcdn.com/24x18/${code.toLowerCase()}.png`;
+}
+
+function fileExtension(fileName: string) {
+  return fileName.split(".").pop()?.toLowerCase() ?? "";
+}
+
+function fileType(file: File) {
+  return file.type || briefFileTypeByExtension[fileExtension(file.name)] || "";
+}
+
+function encodeBase64(buffer: ArrayBuffer) {
+  const bytes = new Uint8Array(buffer);
+  const chunkSize = 32_768;
+  let binary = "";
+
+  for (let index = 0; index < bytes.length; index += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(index, index + chunkSize));
+  }
+
+  return btoa(binary);
+}
+
+async function readBriefAttachment(file: File) {
+  const type = fileType(file);
+
+  if (!briefFileTypes.has(type)) {
+    return { ok: false as const, message: "Upload a PDF, Word, Excel, PNG, JPEG, or TXT file." };
+  }
+
+  if (file.size <= 0 || file.size > maxBriefFileSize) {
+    return { ok: false as const, message: "File must be less than 5 MB." };
+  }
+
+  return {
+    ok: true as const,
+    attachment: {
+      name: file.name,
+      type,
+      size: file.size,
+      content: encodeBase64(await file.arrayBuffer()),
+    },
+  };
 }
 
 type CtaBannerProps = {
@@ -274,7 +337,10 @@ type CtaBannerProps = {
 
 export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
   const [selectedCountry, setSelectedCountry] = useState("KE");
-  const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [selectedBriefFile, setSelectedBriefFile] = useState("");
+  const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle",
+  );
   const [submitMessage, setSubmitMessage] = useState("");
   const submitContactForm = useServerFn(submitContact);
   const selectedDial = countryDialOptions.find(([code]) => code === selectedCountry)?.[2] ?? "+254";
@@ -284,11 +350,23 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const briefFile = formData.get("briefFile");
 
     setSubmitState("submitting");
     setSubmitMessage("");
 
     try {
+      const attachment =
+        briefFile instanceof File && briefFile.size > 0
+          ? await readBriefAttachment(briefFile)
+          : undefined;
+
+      if (attachment && !attachment.ok) {
+        setSubmitState("error");
+        setSubmitMessage(attachment.message);
+        return;
+      }
+
       const result = await submitContactForm({
         data: {
           firstName: String(formData.get("firstName") ?? ""),
@@ -303,6 +381,7 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
           consentContact: formData.get("consentContact") === "on",
           consentMarketing: formData.get("consentMarketing") === "on",
           consentPrivacy: formData.get("consentPrivacy") === "on",
+          attachment: attachment?.attachment,
         },
       });
 
@@ -314,6 +393,7 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
 
       form.reset();
       setSelectedCountry("KE");
+      setSelectedBriefFile("");
       setSubmitState("success");
       setSubmitMessage("Thanks. We received your message and will reply soon.");
     } catch {
@@ -329,12 +409,15 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
         <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <Reveal>
             <div>
-              <div className="text-[10px] font-normal uppercase tracking-[0.18em] text-orange">Contact Us</div>
+              <div className="text-[10px] font-normal uppercase tracking-[0.18em] text-orange">
+                Contact Us
+              </div>
               <h2 className="mt-5 max-w-xl font-display text-[2rem] font-normal leading-[1.08] sm:text-[3rem]">
                 Let's build what is next.
               </h2>
               <p className="mt-5 max-w-md text-[0.86rem] leading-6 text-navy/68">
-                Share the goal. We will reply with a clear first move for scalable digital solutions that create lasting impact.
+                Share the goal. We will reply with a clear first move for scalable digital solutions
+                that create lasting impact.
               </p>
 
               <div className="contact-direct mt-8" aria-label="Direct Wallace Croft contacts">
@@ -408,7 +491,11 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
                         loading="lazy"
                         aria-hidden
                       />
-                      <select value={selectedCountry} onChange={(event) => setSelectedCountry(event.target.value)} aria-label="Country">
+                      <select
+                        value={selectedCountry}
+                        onChange={(event) => setSelectedCountry(event.target.value)}
+                        aria-label="Country"
+                      >
                         {countryDialOptions.map(([code, name]) => (
                           <option key={code} value={code}>
                             {name}
@@ -434,21 +521,35 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
                 <textarea name="message" rows={3} required />
               </label>
               <div className="contact-form__upload">
-                <input type="file" id="contact-brief-file" />
+                <input
+                  type="file"
+                  id="contact-brief-file"
+                  name="briefFile"
+                  accept={briefFileAccept}
+                  onChange={(event) =>
+                    setSelectedBriefFile(event.currentTarget.files?.[0]?.name ?? "")
+                  }
+                />
                 <label htmlFor="contact-brief-file">Choose File</label>
-                <span>PDF, Word, Excel, PNG, JPEG, and TXT files with less than 5 MB file size are supported.</span>
+                <span>
+                  {selectedBriefFile
+                    ? `Selected: ${selectedBriefFile}`
+                    : "PDF, Word, Excel, PNG, JPEG, and TXT files with less than 5 MB file size are supported."}
+                </span>
               </div>
               <div className="contact-form__checks">
                 <label>
                   <input name="consentContact" type="checkbox" />
                   <span>
-                    By submitting you acknowledge that your information will be handled with care and may be used to respond to your inquiry.
+                    By submitting you acknowledge that your information will be handled with care
+                    and may be used to respond to your inquiry.
                   </span>
                 </label>
                 <label>
                   <input name="consentMarketing" type="checkbox" />
                   <span>
-                    By submitting you authorize Wallace Croft to contact you about services, project needs, and related updates.
+                    By submitting you authorize Wallace Croft to contact you about services, project
+                    needs, and related updates.
                   </span>
                 </label>
                 <label>
@@ -467,7 +568,11 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
                   {submitMessage}
                 </p>
               ) : null}
-              <button type="submit" className="group contact-form__submit" disabled={submitState === "submitting"}>
+              <button
+                type="submit"
+                className="group contact-form__submit"
+                disabled={submitState === "submitting"}
+              >
                 {submitState === "submitting" ? (
                   <>
                     <span className="submit-spinner" aria-hidden />
@@ -491,18 +596,15 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
 function ContactNairobiMap() {
   return (
     <Reveal className="contact-presence contact-presence--lead">
-      <div className="contact-presence__map" aria-label="Wallace Croft location map showing Nairobi, Kenya">
-        <img className="contact-presence__world" src={worldMap} alt="Blank world map" loading="lazy" />
-        <svg className="contact-presence__overlay" viewBox="0 0 920 430" aria-hidden>
-          <path className="contact-presence__route" d="M600 229 C632 200 666 164 704 124" />
-          <circle className="contact-presence__africa-dot" cx="600" cy="229" r="6" />
-        </svg>
-
-        <div className="contact-presence__kenya">
-          <img src={kenyaMap} alt="Kenya outline map with Nairobi marked" loading="lazy" />
-          <span className="contact-presence__nairobi-pin" aria-hidden />
-          <span className="contact-presence__nairobi-label">Nairobi</span>
-        </div>
+      <div
+        className="contact-presence__map"
+        aria-label="Wallace Croft location map showing Nairobi, Kenya"
+      >
+        <img
+          className="contact-presence__world-map"
+          src="/world-map-kenya.svg"
+          alt="World map with Kenya highlighted orange and Nairobi marked"
+        />
       </div>
     </Reveal>
   );

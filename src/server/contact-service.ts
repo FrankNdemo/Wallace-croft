@@ -1,10 +1,6 @@
 import "@tanstack/react-start/server-only";
 
-import {
-  normalizeContactInput,
-  validateEmail,
-  type ContactInput,
-} from "@/lib/validation";
+import { normalizeContactInput, validateEmail, type ContactInput } from "@/lib/validation";
 
 export async function handleContactSubmission(data: ContactInput) {
   const [{ query }, { sendLeadNotification }] = await Promise.all([
@@ -24,9 +20,7 @@ export async function handleContactSubmission(data: ContactInput) {
   let id = `website-${Date.now()}`;
   let saved = false;
   let emailSent = false;
-  let notification:
-    | Awaited<ReturnType<typeof sendLeadNotification>>
-    | undefined;
+  let notification: Awaited<ReturnType<typeof sendLeadNotification>> | undefined;
 
   try {
     const result = await query<{ id: string }>(
@@ -88,8 +82,8 @@ export async function handleContactSubmission(data: ContactInput) {
       emailSent,
       notification,
       message: saved
-        ? "Your message was saved, but email delivery failed. Please email ndemofrank1@gmail.com directly if this is urgent."
-        : "We could not send your request right now. Please email ndemofrank1@gmail.com directly.",
+        ? "Your message was saved, but email delivery failed. Please email ndemofrank@wallacecroft.com directly if this is urgent."
+        : "We could not send your request right now. Please email ndemofrank@wallacecroft.com directly.",
     };
   }
 
