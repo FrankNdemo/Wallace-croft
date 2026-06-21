@@ -82,8 +82,8 @@ export async function handleContactSubmission(data: ContactInput) {
       emailSent,
       notification,
       message: saved
-        ? "Your message was saved, but email delivery failed. Please email ndemofrank@wallacecroft.com directly if this is urgent."
-        : "We could not send your request right now. Please email ndemofrank@wallacecroft.com directly.",
+        ? "Your message was saved, but email delivery failed. Please email info@wallacecroft.com directly if this is urgent."
+        : "We could not send your request right now. Please email info@wallacecroft.com directly.",
     };
   }
 

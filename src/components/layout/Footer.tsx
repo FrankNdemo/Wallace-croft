@@ -5,7 +5,7 @@ import { useState, type FormEvent } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { subscribeNewsletter } from "@/server-fns/newsletter";
 
-const contactEmail = "ndemofrank@wallacecroft.com";
+const contactEmail = "info@wallacecroft.com";
 
 const cols = [
   {

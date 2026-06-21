@@ -196,7 +196,7 @@ function customerEmailHtml(lead: Lead) {
 
 async function sendEmail({ to, subject, html, replyTo, tag, attachments = [] }: EmailPayload) {
   const apiKey = process.env.BREVO_API_KEY;
-  const from = process.env.EMAIL_FROM ?? "Wallace Croft <ndemofrank@wallacecroft.com>";
+  const from = process.env.EMAIL_FROM ?? "Wallace Croft <info@wallacecroft.com>";
   const recipients = normalizeRecipients(to);
 
   if (!apiKey) {

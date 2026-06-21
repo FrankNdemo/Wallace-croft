@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Outlet, createFileRoute, useMatches } from "@tanstack/react-router";
 import impactImage from "@/assets/page-hero-about.webp";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { PageHero } from "@/components/sections/PageHero";
@@ -14,7 +14,7 @@ import {
 } from "@/components/sections/AboutSections";
 
 export const Route = createFileRoute("/about")({
-  component: AboutPage,
+  component: AboutLayout,
   head: () => ({
     meta: [
       { title: "About - Wallace Croft" },
@@ -25,7 +25,14 @@ export const Route = createFileRoute("/about")({
   }),
 });
 
-function AboutPage() {
+function AboutLayout() {
+  const matches = useMatches();
+  const hasChildMatch = matches.some((match) => match.routeId !== "/about" && match.pathname.startsWith("/about"));
+
+  if (hasChildMatch) {
+    return <Outlet />;
+  }
+
   return (
     <SiteLayout>
       <PageHero

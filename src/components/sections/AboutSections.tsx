@@ -119,28 +119,30 @@ const quickLinks = [
   },
 ] as const;
 
-const founderStories = [
+export const founderProfiles = [
   {
-    quote: "We build with purpose and innovate with intention.",
-    body: "My mission is to design solutions that don't just solve problems - but create lasting impact for businesses and communities.",
+    slug: "alvis-n",
+    name: "Alvis N.",
+    title: "Vision & Strategy",
     image: "/founder-purpose-laptop.png",
-    alt: "Business leader working on a laptop",
-    imageClass: "about-founder-card__image--top",
+    alt: "Portrait of Alvis Njenga",
+    bio: "As one of the minds behind Wallace Croft, Alvis Njenga helps define the company's vision, strategic direction, and long-term ambitions.\n\nA developer, strategist, and thoughtful leader, Alvis combines technical expertise with product thinking to identify opportunities, nurture partnerships, and guide solutions from concept to reality. His ability to connect innovation with purpose enables Wallace Croft to pursue meaningful projects that create lasting value.\n\nAlvis is passionate about building experiences that inspire growth, foster collaboration, and position Wallace Croft as a catalyst for impactful digital transformation.",
   },
   {
-    quote: "Great systems don't happen by chance. They're built with vision and discipline.",
-    body: "I focus on building the left-brain systems and structures that give space for ideas, people, and teams to do their best work.",
+    slug: "ndemo-f",
+    name: "Ndemo F.",
+    title: "Growth & Innovation",
     image: "/founder-systems-real.jpeg",
-    alt: "Systems leader standing in a server room",
-    imageClass: "about-founder-card__image--middle",
-    reverse: true,
+    alt: "Portrait of Francis Ndemo",
+    bio: "Francis Ndemo is one of the driving minds behind Wallace Croft, leading growth initiatives, project management, and product delivery across the company's ventures.\n\nAs a software developer and project-oriented innovator, Francis bridges technology, execution, and customer experience. He oversees workflows, coordinates teams, and ensures ideas evolve efficiently into polished, reliable products. His interest in emerging technologies and continuous improvement helps Wallace Croft remain adaptive, creative, and forward-thinking.\n\nFrancis believes great products are built through collaboration, disciplined execution, and a commitment to solving real-world challenges.",
   },
   {
-    quote: "The future belongs to those who build with clarity and courage.",
-    body: "I partner with founders and organizations to turn bold ideas into sustainable, scalable realities.",
+    slug: "kimani-a",
+    name: "Kimani A.",
+    title: "Operations & Delivery",
     image: "/founder-clarity-real.png",
-    alt: "Business leader smiling in a blue striped shirt",
-    imageClass: "about-founder-card__image--bottom",
+    alt: "Portrait of Alvin Kimani",
+    bio: "Alvin Kimani is among the minds shaping Wallace Croft's engineering culture, operational excellence, and delivery standards.\n\nAs a developer and systems-focused problem solver, Alvin ensures that ideas are transformed into dependable, scalable, and high-quality solutions. He leads implementation efforts, promotes technical best practices, and maintains seamless collaboration between design, development, and deployment.\n\nHis dedication to reliability, efficiency, and thoughtful execution helps Wallace Croft consistently deliver technology that is both impactful and built to endure.",
   },
 ] as const;
 
@@ -195,40 +197,42 @@ export function AboutStory() {
 
 export function AboutFounders() {
   return (
-    <section className="about-founders bg-white text-navy" aria-label="Founder perspectives">
+    <section className="about-founders bg-white text-navy" aria-label="Founder profiles">
       <div className="about-founders__heading container-pro">
         <Reveal>
           <div>
-            <h2>The Minds Behind the Mission</h2>
+            <h2>Minds Behind Wallace Croft</h2>
             <p>
-              Meet the professionals behind the ideas, systems, and innovations that power
-              meaningful transformation.
+              Builders With One shared vision. Designing thoughtful experiences, engineering meaningful solutions, and shaping what Wallace Croft becomes tomorrow.
             </p>
           </div>
         </Reveal>
       </div>
 
       <div className="about-founders__inner">
-        {founderStories.map((story, index) => (
-          <Reveal key={story.quote} i={index}>
-            <article className={`about-founder-card${story.reverse ? " about-founder-card--reverse" : ""}`}>
-              <div className="about-founder-card__copy">
-                <span className="about-founder-card__quote-icon" aria-hidden>
-                  {"\u201c"}
-                </span>
-                <h2>{story.quote}</h2>
-                <span className="about-founder-card__rule" aria-hidden />
-                <p>{story.body}</p>
-              </div>
-              <figure className={`about-founder-card__image ${story.imageClass}`}>
+        {founderProfiles.map((founder, index) => (
+          <Reveal key={founder.slug} i={index}>
+            <article className="about-founder-card">
+              <figure className="about-founder-card__image">
                 <img
-                  src={story.image}
-                  alt={story.alt}
+                  src={founder.image}
+                  alt={founder.alt}
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : "auto"}
                   decoding={index === 0 ? "sync" : "async"}
                 />
               </figure>
+              <div className="about-founder-card__copy">
+                <h3>{founder.name}</h3>
+                <p>{founder.title}</p>
+                <Link
+                  to="/about/$slug"
+                  params={{ slug: founder.slug }}
+                  className="about-founder-card__link"
+                >
+                  Read bio
+                </Link>
+              </div>
             </article>
           </Reveal>
         ))}

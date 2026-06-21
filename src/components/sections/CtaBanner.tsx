@@ -7,7 +7,10 @@ import { Reveal } from "@/components/ui-pro/Reveal";
 import { submitContact } from "@/server-fns/contact";
 
 const contactDetails = {
-  emails: ["sales@wallacecroft.com", "alvisnjenga@wallacecroft.com", "ndemofrank@wallacecroft.com"],
+  emails: [
+    "info@wallacecroft.com",
+    "hello@wallacecroft.com",
+  ],
   phones: [
     ["Kenya", "+254 114 470441"],
     ["Kenya", "+254 710 372157"],

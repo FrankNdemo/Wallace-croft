@@ -1,12 +1,11 @@
 import "@tanstack/react-start/server-only";
 
 export const defaultContactEmail =
-  process.env.DEFAULT_CONTACT_EMAIL ?? "ndemofrank@wallacecroft.com";
+  process.env.DEFAULT_CONTACT_EMAIL ?? "hello@wallacecroft.com";
 
 export const defaultLeadNotificationEmails = [
-  "sales@wallacecroft.com",
-  "alvisnjenga@wallacecroft.com",
-  "ndemofrank@wallacecroft.com",
+  "info@wallacecroft.com",
+  "hello@wallacecroft.com",
 ] as const;
 
 export function requiredEnv(name: string) {

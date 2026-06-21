@@ -25,6 +25,7 @@ import { Route as BlogLatestInsightsRouteImport } from './routes/blog.latest-ins
 import { Route as BlogFeaturedThinkingRouteImport } from './routes/blog.featured-thinking'
 import { Route as BlogDesignInsightsRouteImport } from './routes/blog.design-insights'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AboutSlugRouteImport } from './routes/about.$slug'
 import { Route as BlogCategoryCategoryRouteImport } from './routes/blog.category.$category'
 
 const ServicesRoute = ServicesRouteImport.update({
@@ -107,6 +108,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const AboutSlugRoute = AboutSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AboutRoute,
+} as any)
 const BlogCategoryCategoryRoute = BlogCategoryCategoryRouteImport.update({
   id: '/category/$category',
   path: '/category/$category',
@@ -115,13 +121,14 @@ const BlogCategoryCategoryRoute = BlogCategoryCategoryRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
+  '/about/$slug': typeof AboutSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/design-insights': typeof BlogDesignInsightsRoute
   '/blog/featured-thinking': typeof BlogFeaturedThinkingRoute
@@ -134,12 +141,13 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
+  '/about/$slug': typeof AboutSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/design-insights': typeof BlogDesignInsightsRoute
   '/blog/featured-thinking': typeof BlogFeaturedThinkingRoute
@@ -153,13 +161,14 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
+  '/about/$slug': typeof AboutSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/design-insights': typeof BlogDesignInsightsRoute
   '/blog/featured-thinking': typeof BlogFeaturedThinkingRoute
@@ -181,6 +190,7 @@ export interface FileRouteTypes {
     | '/industries'
     | '/resources'
     | '/services'
+    | '/about/$slug'
     | '/blog/$slug'
     | '/blog/design-insights'
     | '/blog/featured-thinking'
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/industries'
     | '/resources'
     | '/services'
+    | '/about/$slug'
     | '/blog/$slug'
     | '/blog/design-insights'
     | '/blog/featured-thinking'
@@ -218,6 +229,7 @@ export interface FileRouteTypes {
     | '/industries'
     | '/resources'
     | '/services'
+    | '/about/$slug'
     | '/blog/$slug'
     | '/blog/design-insights'
     | '/blog/featured-thinking'
@@ -231,7 +243,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  AboutRoute: typeof AboutRouteWithChildren
   BlogRoute: typeof BlogRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
   ContactRoute: typeof ContactRoute
@@ -354,6 +366,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/about/$slug': {
+      id: '/about/$slug'
+      path: '/$slug'
+      fullPath: '/about/$slug'
+      preLoaderRoute: typeof AboutSlugRouteImport
+      parentRoute: typeof AboutRoute
+    }
     '/blog/category/$category': {
       id: '/blog/category/$category'
       path: '/category/$category'
@@ -363,6 +382,16 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface AboutRouteChildren {
+  AboutSlugRoute: typeof AboutSlugRoute
+}
+
+const AboutRouteChildren: AboutRouteChildren = {
+  AboutSlugRoute: AboutSlugRoute,
+}
+
+const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
@@ -422,7 +451,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  AboutRoute: AboutRouteWithChildren,
   BlogRoute: BlogRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
   ContactRoute: ContactRoute,
