@@ -14,13 +14,16 @@ import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as ResourcesSlugRouteImport } from './routes/resources.$slug'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
+import { Route as CareersVacanciesRouteImport } from './routes/careers.vacancies'
 import { Route as BlogLatestInsightsRouteImport } from './routes/blog.latest-insights'
 import { Route as BlogFeaturedThinkingRouteImport } from './routes/blog.featured-thinking'
 import { Route as BlogDesignInsightsRouteImport } from './routes/blog.design-insights'
@@ -53,9 +56,19 @@ const CaseStudiesRoute = CaseStudiesRouteImport.update({
   path: '/case-studies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApproachRoute = ApproachRouteImport.update({
+  id: '/approach',
+  path: '/approach',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -87,6 +100,11 @@ const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => CaseStudiesRoute,
+} as any)
+const CareersVacanciesRoute = CareersVacanciesRouteImport.update({
+  id: '/vacancies',
+  path: '/vacancies',
+  getParentRoute: () => CareersRoute,
 } as any)
 const BlogLatestInsightsRoute = BlogLatestInsightsRouteImport.update({
   id: '/latest-insights',
@@ -122,7 +140,9 @@ const BlogCategoryCategoryRoute = BlogCategoryCategoryRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
+  '/approach': typeof ApproachRoute
   '/blog': typeof BlogRouteWithChildren
+  '/careers': typeof CareersRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
@@ -133,6 +153,7 @@ export interface FileRoutesByFullPath {
   '/blog/design-insights': typeof BlogDesignInsightsRoute
   '/blog/featured-thinking': typeof BlogFeaturedThinkingRoute
   '/blog/latest-insights': typeof BlogLatestInsightsRoute
+  '/careers/vacancies': typeof CareersVacanciesRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/resources/$slug': typeof ResourcesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -142,6 +163,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
+  '/approach': typeof ApproachRoute
+  '/careers': typeof CareersRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
@@ -152,6 +175,7 @@ export interface FileRoutesByTo {
   '/blog/design-insights': typeof BlogDesignInsightsRoute
   '/blog/featured-thinking': typeof BlogFeaturedThinkingRoute
   '/blog/latest-insights': typeof BlogLatestInsightsRoute
+  '/careers/vacancies': typeof CareersVacanciesRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/resources/$slug': typeof ResourcesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -162,7 +186,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
+  '/approach': typeof ApproachRoute
   '/blog': typeof BlogRouteWithChildren
+  '/careers': typeof CareersRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
@@ -173,6 +199,7 @@ export interface FileRoutesById {
   '/blog/design-insights': typeof BlogDesignInsightsRoute
   '/blog/featured-thinking': typeof BlogFeaturedThinkingRoute
   '/blog/latest-insights': typeof BlogLatestInsightsRoute
+  '/careers/vacancies': typeof CareersVacanciesRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/resources/$slug': typeof ResourcesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -184,7 +211,9 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/approach'
     | '/blog'
+    | '/careers'
     | '/case-studies'
     | '/contact'
     | '/industries'
@@ -195,6 +224,7 @@ export interface FileRouteTypes {
     | '/blog/design-insights'
     | '/blog/featured-thinking'
     | '/blog/latest-insights'
+    | '/careers/vacancies'
     | '/case-studies/$slug'
     | '/resources/$slug'
     | '/services/$slug'
@@ -204,6 +234,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/approach'
+    | '/careers'
     | '/case-studies'
     | '/contact'
     | '/industries'
@@ -214,6 +246,7 @@ export interface FileRouteTypes {
     | '/blog/design-insights'
     | '/blog/featured-thinking'
     | '/blog/latest-insights'
+    | '/careers/vacancies'
     | '/case-studies/$slug'
     | '/resources/$slug'
     | '/services/$slug'
@@ -223,7 +256,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/approach'
     | '/blog'
+    | '/careers'
     | '/case-studies'
     | '/contact'
     | '/industries'
@@ -234,6 +269,7 @@ export interface FileRouteTypes {
     | '/blog/design-insights'
     | '/blog/featured-thinking'
     | '/blog/latest-insights'
+    | '/careers/vacancies'
     | '/case-studies/$slug'
     | '/resources/$slug'
     | '/services/$slug'
@@ -244,7 +280,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRouteWithChildren
+  ApproachRoute: typeof ApproachRoute
   BlogRoute: typeof BlogRouteWithChildren
+  CareersRoute: typeof CareersRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
@@ -289,11 +327,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/approach': {
+      id: '/approach'
+      path: '/approach'
+      fullPath: '/approach'
+      preLoaderRoute: typeof ApproachRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -337,6 +389,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/case-studies/$slug'
       preLoaderRoute: typeof CaseStudiesSlugRouteImport
       parentRoute: typeof CaseStudiesRoute
+    }
+    '/careers/vacancies': {
+      id: '/careers/vacancies'
+      path: '/vacancies'
+      fullPath: '/careers/vacancies'
+      preLoaderRoute: typeof CareersVacanciesRouteImport
+      parentRoute: typeof CareersRoute
     }
     '/blog/latest-insights': {
       id: '/blog/latest-insights'
@@ -413,6 +472,17 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface CareersRouteChildren {
+  CareersVacanciesRoute: typeof CareersVacanciesRoute
+}
+
+const CareersRouteChildren: CareersRouteChildren = {
+  CareersVacanciesRoute: CareersVacanciesRoute,
+}
+
+const CareersRouteWithChildren =
+  CareersRoute._addFileChildren(CareersRouteChildren)
+
 interface CaseStudiesRouteChildren {
   CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
 }
@@ -452,7 +522,9 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRouteWithChildren,
+  ApproachRoute: ApproachRoute,
   BlogRoute: BlogRouteWithChildren,
+  CareersRoute: CareersRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,

@@ -274,7 +274,7 @@ export function AboutReasons() {
               })}
             </div>
 
-            <Link to="/about" className="about-outline-button mt-10">
+            <Link to="/approach" className="about-outline-button mt-10">
               More on Our Approach <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -385,7 +385,7 @@ export function AboutTeam() {
               </p>
             </div>
           </Reveal>
-          <Link to="/contact" className="about-outline-button">
+          <Link to="/careers" className="about-outline-button">
             Join Our Team
           </Link>
         </div>

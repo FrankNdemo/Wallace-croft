@@ -8,7 +8,7 @@ type PageHeroProps = {
   image?: string;
   images?: string[];
   imageAlt: string;
-  visual?: "mark" | "brain" | "factory" | "resources" | "case" | "advisor";
+  visual?: "mark" | "brain" | "factory" | "resources" | "case" | "advisor" | "career";
   align?: "split" | "center";
   showVisual?: boolean;
   className?: string;

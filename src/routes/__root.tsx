@@ -142,6 +142,7 @@ function RootComponent() {
         router.preloadRoute({ to: "/case-studies" }),
         router.preloadRoute({ to: "/resources" }),
         router.preloadRoute({ to: "/about" }),
+        router.preloadRoute({ to: "/careers" }),
         router.preloadRoute({ to: "/contact" }),
         router.preloadRoute({ to: "/blog" }),
       ]);

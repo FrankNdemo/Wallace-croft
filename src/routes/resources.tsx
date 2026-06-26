@@ -260,7 +260,7 @@ export const Route = createFileRoute("/resources")({
   }),
 });
 
-function ApproachPage() {
+export function ApproachPage() {
   const [activeSection, setActiveSection] = useState(approachNavItems[0].id);
   const [isSubnavFixed, setIsSubnavFixed] = useState(false);
   const [subnavHeight, setSubnavHeight] = useState(0);
