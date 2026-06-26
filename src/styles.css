@@ -3015,12 +3015,6 @@ footer button:disabled {
     margin-top: 0;
   }
 
-  .about-founders__inner > *:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc((100% - 1rem) / 2);
-  }
-
   .about-founder-card,
   .about-founder-card--reverse {
     grid-template-columns: minmax(0, 1fr);
