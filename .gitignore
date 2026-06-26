@@ -21,15 +21,20 @@ test-results
 .output
 .vercel/
 .vinxi
+.tanstack/
 .tanstack/**
 .nitro
 .env
 .env.*
 .env.example
+.env*.example
+env.example
+env.*.example
 *.local
 
 # Wrangler / Cloudflare
 .wrangler/
+.wrangler/**
 .dev.vars
 
 # Editor directories and files

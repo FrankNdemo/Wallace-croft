@@ -24,6 +24,7 @@ export const Route = createFileRoute("/about/$slug")({
 function FounderProfilePage() {
   const { slug } = Route.useParams();
   const founder = founderProfiles.find((item) => item.slug === slug);
+  const otherFounders = founderProfiles.filter((item) => item.slug !== slug);
 
   if (!founder) {
     throw notFound();
@@ -31,10 +32,12 @@ function FounderProfilePage() {
 
   return (
     <SiteLayout>
-      <section className="founder-profile-page bg-white py-16 text-navy lg:py-20">
+      <section id="founder-bio" className="founder-profile-page bg-white py-16 text-navy lg:py-20">
         <div className="container-pro">
           <nav className="founder-profile-breadcrumb" aria-label="Breadcrumb">
-            <Link to="/about" className="founder-profile-breadcrumb__link">About</Link>
+            <Link to="/about" hash="founders" className="founder-profile-breadcrumb__link">
+              About
+            </Link>
             <span className="founder-profile-breadcrumb__divider">&gt;</span>
             <span className="founder-profile-breadcrumb__name">{founder.name}</span>
           </nav>
@@ -72,14 +75,34 @@ function FounderProfilePage() {
           </div>
 
           <div className="founder-profile-details mt-16 space-y-6 text-[0.95rem] leading-8 text-navy/80">
-            {founder.bio.split('\n\n').map((paragraph, index) => (
+            {founder.bio.split("\n\n").map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>
 
-          <div className="mt-16 flex items-center justify-start">
+          <div className="founder-profile-more mt-14" aria-label="Other founder profiles">
+            {otherFounders.map((item) => (
+              <Link
+                key={item.slug}
+                to="/about/$slug"
+                params={{ slug: item.slug }}
+                hash="founder-bio"
+                className="founder-profile-more__card"
+              >
+                <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
+                <span>
+                  <strong>{item.name}</strong>
+                  <small>{item.title}</small>
+                </span>
+                <em>Read bio</em>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-10 flex items-center justify-center">
             <Link
               to="/about"
+              hash="founders"
               className="flex items-center gap-2 text-orange hover:text-orange/80 transition-colors font-semibold"
             >
               <ArrowLeft className="h-4 w-4" />
