@@ -126,7 +126,7 @@ export const founderProfiles = [
     title: "Chief Executive Officer",
     image: "/founder-purpose-laptop.png",
     alt: "Portrait of Alvis Njenga",
-    bio: "Alvis Njenga is the CEO of Wallace Croft, setting the vision, direction, and ambition behind the company.\n\nHe brings a rare mix of developer instincts, product taste, and strategic focus to the table, turning early ideas into clear opportunities and guiding the team toward work that matters. Alvis keeps Wallace Croft pointed at bold, useful innovation: technology that feels sharp, practical, and built for real business momentum.\n\nHis leadership style is calm, curious, and future-facing. He is driven by partnerships, meaningful products, and the belief that great digital transformation should leave people and companies more capable than it found them.",
+    bio: "Alvis Njenga is the Chief Executive Officer of Wallace Croft, setting the vision, direction, and ambition behind the company.\n\nHe brings a rare mix of developer instincts, product taste, and strategic focus to the table, turning early ideas into clear opportunities and guiding the team toward work that matters. Alvis keeps Wallace Croft pointed at bold, useful innovation: technology that feels sharp, practical, and built for real business momentum.\n\nHis leadership style is calm, curious, and future-facing. He is driven by partnerships, meaningful products, and the belief that great digital transformation should leave people and companies more capable than it found them.",
   },
   {
     slug: "ndemo-f",
@@ -134,7 +134,7 @@ export const founderProfiles = [
     title: "Chief Technology Officer",
     image: "/founder-systems-real.jpeg",
     alt: "Portrait of Francis Ndemo",
-    bio: "Francis Ndemo is the CTO of Wallace Croft, leading the technical direction behind the platforms, products, and systems the company builds.\n\nHe sits where engineering discipline meets experimentation, shaping architecture, delivery standards, and the technology choices that keep projects fast without becoming fragile. Francis has a strong eye for practical innovation: the kind that turns complex workflows into reliable products people can actually use.\n\nHe believes strong technology is never just code. It is teamwork, clarity, iteration, and the discipline to keep improving until the solution feels effortless on the outside and solid underneath.",
+    bio: "Francis Ndemo is the Chief Technology Officer of Wallace Croft, leading the technical direction behind the platforms, products, and systems the company builds.\n\nHe sits where engineering discipline meets experimentation, shaping architecture, delivery standards, and the technology choices that keep projects fast without becoming fragile. Francis has a strong eye for practical innovation: the kind that turns complex workflows into reliable products people can actually use.\n\nHe believes strong technology is never just code. It is teamwork, clarity, iteration, and the discipline to keep improving until the solution feels effortless on the outside and solid underneath.",
   },
   {
     slug: "kimani-a",
@@ -142,7 +142,7 @@ export const founderProfiles = [
     title: "Chief Operations Officer",
     image: "/founder-clarity-real.png",
     alt: "Portrait of Alvin Kimani",
-    bio: "Alvin Kimani is the COO and Chief Operations Officer of Wallace Croft, keeping the company moving with structure, focus, and delivery discipline.\n\nHe connects strategy to execution, making sure teams have the rhythm, standards, and operating clarity needed to turn ambitious ideas into dependable results. Alvin is systems-minded and detail-aware, with a steady focus on reliability, collaboration, and the kind of execution clients can trust.\n\nHis work helps Wallace Croft stay sharp as it grows: organized without becoming slow, ambitious without losing quality, and always grounded in outcomes that hold up in the real world.",
+    bio: "Alvin Kimani is the Chief Operations Officer of Wallace Croft, keeping the company moving with structure, focus, and delivery discipline.\n\nHe connects strategy to execution, making sure teams have the rhythm, standards, and operating clarity needed to turn ambitious ideas into dependable results. Alvin is systems-minded and detail-aware, with a steady focus on reliability, collaboration, and the kind of execution clients can trust.\n\nHis work helps Wallace Croft stay sharp as it grows: organized without becoming slow, ambitious without losing quality, and always grounded in outcomes that hold up in the real world.",
   },
 ] as const;
 
