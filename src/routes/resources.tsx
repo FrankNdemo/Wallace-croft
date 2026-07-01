@@ -69,40 +69,45 @@ const howItWorks = [
   {
     title: "Deep Industry Knowledge",
     body: "We start with the operating context: customers, workflows, risks, economics, and the systems teams rely on every day.",
-    image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image:
+      "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1400",
   },
   {
     title: "End-to-end Capabilities",
     body: "Strategy, UX, engineering, data, cloud, launch, and managed operations are connected into one accountable delivery path.",
-    image: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image:
+      "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1400",
   },
   {
     title: "Born Agile",
     body: "We work in short cycles, make progress visible, test assumptions early, and turn feedback into the next release.",
-    image: "https://images.pexels.com/photos/6804093/pexels-photo-6804093.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image:
+      "https://images.pexels.com/photos/6804093/pexels-photo-6804093.jpeg?auto=compress&cs=tinysrgb&w=1400",
   },
   {
     title: "Top-down Capabilities, Bottom-up Spirit",
     body: "Leadership priorities and delivery realities stay connected so strategy becomes practical work, not shelfware.",
-    image: "https://images.pexels.com/photos/3182833/pexels-photo-3182833.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image:
+      "https://images.pexels.com/photos/3182833/pexels-photo-3182833.jpeg?auto=compress&cs=tinysrgb&w=1400",
   },
   {
     title: "Culture & Compliance Expertise",
     body: "Change, security, governance, adoption, and compliance are handled as part of the operating model from the beginning.",
-    image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image:
+      "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1400",
   },
   {
     title: "Mastery in Enterprise Technology",
     body: "We modernize platforms, data flows, integrations, automation, AI, and observability so systems can scale with confidence.",
-    image: "https://images.pexels.com/photos/17489163/pexels-photo-17489163.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image:
+      "https://images.pexels.com/photos/17489163/pexels-photo-17489163.jpeg?auto=compress&cs=tinysrgb&w=1400",
   },
 ] as const;
 
 const icon = (name: string, variant = "original") =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-${variant}.svg`;
 
-const simpleIcon = (name: string, color: string) =>
-  `https://cdn.simpleicons.org/${name}/${color}`;
+const simpleIcon = (name: string, color: string) => `https://cdn.simpleicons.org/${name}/${color}`;
 
 const techIconFallbacks: Record<string, string> = {
   AWS: "AWS",
@@ -229,7 +234,10 @@ const practices = [
 const focusCards = [
   ["Enterprise Transformation", "Build durable operating systems connected to today's economy."],
   ["Data Analytics & AI", "Turn data into trusted reports, automation, and intelligence."],
-  ["Product Innovations", "Launch new products with solid UX, architecture, and engineering craft."],
+  [
+    "Product Innovations",
+    "Launch new products with solid UX, architecture, and engineering craft.",
+  ],
   ["Digital Strategy", "Define coherent moves across priorities, platforms, and opportunities."],
 ] as const;
 
@@ -316,7 +324,8 @@ export function ApproachPage() {
       return;
     }
 
-    const targetLeft = activeLink.offsetLeft - scroller.clientWidth / 2 + activeLink.clientWidth / 2;
+    const targetLeft =
+      activeLink.offsetLeft - scroller.clientWidth / 2 + activeLink.clientWidth / 2;
     scroller.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
   }, [activeSection]);
 
@@ -354,7 +363,11 @@ export function ApproachPage() {
             ))}
           </div>
         </nav>
-        <div className="approach-subnav-spacer" style={{ height: isSubnavFixed ? subnavHeight : 0 }} aria-hidden />
+        <div
+          className="approach-subnav-spacer"
+          style={{ height: isSubnavFixed ? subnavHeight : 0 }}
+          aria-hidden
+        />
 
         <section id="approach" className="approach-values">
           <div className="container-pro">
@@ -385,23 +398,43 @@ export function ApproachPage() {
           <div className="approach-section-heading">
             <h2>Agile Process</h2>
             <p>
-              We always focus on delivering greater and measurable business impact with less time and effort.
-              That is why we love our agile process: shipping software frequently, gathering real feedback,
-              and improving with each iteration.
+              We always focus on delivering greater and measurable business impact with less time
+              and effort. That is why we love our agile process: shipping software frequently,
+              gathering real feedback, and improving with each iteration.
             </p>
           </div>
           <div className="approach-orbit">
-            <ProcessNode className="approach-orbit__node approach-orbit__node--one" title="Talent" body="Elite experts with engineering, design, and delivery skills available on demand." />
-            <ProcessNode className="approach-orbit__node approach-orbit__node--two" title="Tactics" body="Been-there-done-that expertise and tactical advice for strategy and flawless execution." />
-            <ProcessNode className="approach-orbit__node approach-orbit__node--three" title="Tools" body="Out-of-the-box tools, components, and products that accelerate the delivery." />
-            <ProcessNode className="approach-orbit__node approach-orbit__node--four" title="Technology" body="Cutting-edge tech stack that offers cost savings, faster ROI, and future-proof foundation." />
+            <ProcessNode
+              className="approach-orbit__node approach-orbit__node--one"
+              title="Talent"
+              body="Elite experts with engineering, design, and delivery skills available on demand."
+            />
+            <ProcessNode
+              className="approach-orbit__node approach-orbit__node--two"
+              title="Tactics"
+              body="Been-there-done-that expertise and tactical advice for strategy and flawless execution."
+            />
+            <ProcessNode
+              className="approach-orbit__node approach-orbit__node--three"
+              title="Tools"
+              body="Out-of-the-box tools, components, and products that accelerate the delivery."
+            />
+            <ProcessNode
+              className="approach-orbit__node approach-orbit__node--four"
+              title="Technology"
+              body="Cutting-edge tech stack that offers cost savings, faster ROI, and future-proof foundation."
+            />
             <div className="approach-orbit__graphic" aria-hidden>
               <span className="approach-orbit__ring" />
               <span className="approach-orbit__petal approach-orbit__petal--one" />
               <span className="approach-orbit__petal approach-orbit__petal--two" />
               <span className="approach-orbit__petal approach-orbit__petal--three" />
               <span className="approach-orbit__petal approach-orbit__petal--four" />
-              <span className="approach-orbit__core">Wallace Croft<br />Approach</span>
+              <span className="approach-orbit__core">
+                Wallace Croft
+                <br />
+                Approach
+              </span>
             </div>
           </div>
         </section>
@@ -463,7 +496,15 @@ export function ApproachPage() {
   );
 }
 
-function ProcessNode({ className, title, body }: { className: string; title: string; body: string }) {
+function ProcessNode({
+  className,
+  title,
+  body,
+}: {
+  className: string;
+  title: string;
+  body: string;
+}) {
   return (
     <article className={className}>
       <span />
@@ -581,7 +622,13 @@ function ApproachHowItWorks() {
               <article key={item.title} className="approach-work-card differentiator-card shrink-0">
                 {imageFirst ? (
                   <>
-                    <img src={item.image} alt={item.title} loading="lazy" width={1600} height={1000} />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      width={1600}
+                      height={1000}
+                    />
                     <div className="approach-work-card__copy differentiator-card__copy">
                       <h3>{item.title}</h3>
                       <p>{item.body}</p>
@@ -593,7 +640,13 @@ function ApproachHowItWorks() {
                       <h3>{item.title}</h3>
                       <p>{item.body}</p>
                     </div>
-                    <img src={item.image} alt={item.title} loading="lazy" width={1600} height={1000} />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      width={1600}
+                      height={1000}
+                    />
                   </>
                 )}
               </article>
@@ -619,7 +672,10 @@ function TechIcon({ name, logo }: { name: string; logo: string }) {
 
   if (stableFallback || failed) {
     return (
-      <span className={`approach-tech__icon-fallback approach-tech__icon-fallback--${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} aria-hidden>
+      <span
+        className={`approach-tech__icon-fallback approach-tech__icon-fallback--${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+        aria-hidden
+      >
         {stableFallback ?? initials}
       </span>
     );
@@ -685,12 +741,8 @@ function ApproachContact() {
 
 function ApproachFooter() {
   const socialLinks = [
-    { label: "Facebook", icon: "facebook" },
-    { label: "LinkedIn", icon: "linkedin" },
-    { label: "X", icon: "x" },
-    { label: "Medium", icon: "medium" },
-    { label: "YouTube", icon: "youtube" },
-    { label: "Instagram", icon: "instagram" },
+    { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/company/wallace-croft" },
+    { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/wallacecroft/" },
   ] as const;
 
   return (
@@ -700,21 +752,58 @@ function ApproachFooter() {
           <Logo />
           <div className="approach-footer__socials" aria-label="Social links">
             {socialLinks.map((item) => (
-              <a key={item.label} href="#" aria-label={item.label}>
+              <a
+                key={item.label}
+                href={item.href}
+                aria-label={`Wallace Croft on ${item.label}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <SocialIcon type={item.icon} />
               </a>
             ))}
           </div>
           <p>&copy;{new Date().getFullYear()} Wallace Croft. All rights reserved.</p>
           <div className="approach-footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms and Conditions</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-and-conditions">Terms and Conditions</Link>
           </div>
         </div>
-        <FooterColumn title="Company" items={["About", "Services", "Case Studies", "APProach", "Careers"]} />
-        <FooterColumn title="Digital Services" items={["AI Development Services", "Digital Transformation", "Custom Software", "Technology Modernization", "Data Strategy", "Web Development"]} />
-        <FooterColumn title="Industries" items={["Retail", "Manufacturing", "Distribution", "Building Materials", "Healthcare", "Finance"]} />
-        <FooterColumn title="GenAI Services" items={["GenAI Software Development", "AI Agent Development", "LLM Development", "AI Strategy & Consulting"]} />
+        <FooterColumn
+          title="Company"
+          items={["About", "Services", "Case Studies", "APProach", "Careers"]}
+        />
+        <FooterColumn
+          title="Digital Services"
+          items={[
+            "AI Development Services",
+            "Digital Transformation",
+            "Custom Software",
+            "Technology Modernization",
+            "Data Strategy",
+            "Web Development",
+          ]}
+        />
+        <FooterColumn
+          title="Industries"
+          items={[
+            "Retail",
+            "Manufacturing",
+            "Distribution",
+            "Building Materials",
+            "Healthcare",
+            "Finance",
+          ]}
+        />
+        <FooterColumn
+          title="GenAI Services"
+          items={[
+            "GenAI Software Development",
+            "AI Agent Development",
+            "LLM Development",
+            "AI Strategy & Consulting",
+          ]}
+        />
       </div>
     </footer>
   );
@@ -727,7 +816,19 @@ function FooterColumn({ title, items }: { title: string; items: string[] }) {
       <ul>
         {items.map((item) => (
           <li key={item}>
-            <Link to={item === "APProach" ? "/resources" : item === "About" ? "/about" : item === "Case Studies" ? "/case-studies" : "/services"}>
+            <Link
+              to={
+                item === "APProach"
+                  ? "/approach"
+                  : item === "About"
+                    ? "/about"
+                    : item === "Case Studies"
+                      ? "/case-studies"
+                      : item === "Careers"
+                        ? "/careers"
+                        : "/services"
+              }
+            >
               {item}
             </Link>
           </li>

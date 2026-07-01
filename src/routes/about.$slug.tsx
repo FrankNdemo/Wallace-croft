@@ -1,5 +1,5 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { Facebook, Globe, Instagram, ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronRight, Globe2, Instagram, Linkedin, Mail } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { founderProfiles } from "@/components/sections/AboutSections";
 
@@ -31,18 +31,22 @@ function FounderProfilePage() {
   }
 
   return (
-    <SiteLayout>
-      <section id="founder-bio" className="founder-profile-page bg-white py-16 text-navy lg:py-20">
+    <SiteLayout footerVariant="light">
+      <section id="founder-bio" className="founder-profile-page bg-white text-navy">
         <div className="container-pro">
           <nav className="founder-profile-breadcrumb" aria-label="Breadcrumb">
+            <Link to="/" className="founder-profile-breadcrumb__link">
+              Home
+            </Link>
+            <ChevronRight className="founder-profile-breadcrumb__separator" aria-hidden="true" />
             <Link to="/about" hash="founders" className="founder-profile-breadcrumb__link">
               About
             </Link>
-            <span className="founder-profile-breadcrumb__divider">&gt;</span>
+            <ChevronRight className="founder-profile-breadcrumb__separator" aria-hidden="true" />
             <span className="founder-profile-breadcrumb__name">{founder.name}</span>
           </nav>
 
-          <div className="founder-profile-hero mt-10 grid gap-12 lg:grid-cols-[minmax(320px,36rem)_1fr] lg:items-center">
+          <div className="founder-profile-hero mt-10">
             <div className="founder-profile-hero__image overflow-hidden rounded-[2.5rem] bg-slate-100 shadow-[0_35px_85px_-45px_rgba(15,23,42,0.22)]">
               <img
                 src={founder.image}
@@ -52,31 +56,56 @@ function FounderProfilePage() {
                 decoding="sync"
               />
             </div>
-            <div className="founder-profile-hero__copy max-w-3xl">
+            <div className="founder-profile-hero__copy">
               <h1 className="founder-profile-name font-display text-[3rem] font-normal leading-[1.02] sm:text-[3.75rem]">
                 {founder.name}
               </h1>
               <p className="founder-profile-title mt-4 text-[0.95rem] uppercase tracking-[0.18em] text-navy/75">
                 {founder.title}
               </p>
-              <div className="founder-profile-follow mt-6 flex flex-wrap items-center gap-4 text-[0.95rem] text-navy/75">
-                <span className="font-semibold text-navy">Follow on:</span>
-                <a href="#" className="founder-profile-social" aria-label="Facebook">
-                  <Facebook className="h-4 w-4" />
+              <div className="founder-profile-follow mt-6">
+                <span className="founder-profile-follow__label">Follow on:</span>
+                <a
+                  href="mailto:info@wallacecroft.com"
+                  className="founder-profile-social"
+                  aria-label="Email Wallace Croft"
+                >
+                  <Mail className="h-5 w-5" />
                 </a>
-                <a href="#" className="founder-profile-social" aria-label="Globe">
-                  <Globe className="h-4 w-4" />
+                <a
+                  href="https://www.wallacecroft.com"
+                  className="founder-profile-social"
+                  aria-label="Wallace Croft website"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Globe2 className="h-5 w-5" />
                 </a>
-                <a href="#" className="founder-profile-social" aria-label="Instagram">
-                  <Instagram className="h-4 w-4" />
+                <a
+                  href="https://www.linkedin.com/company/wallace-croft"
+                  className="founder-profile-social"
+                  aria-label="Wallace Croft on LinkedIn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/wallacecroft/"
+                  className="founder-profile-social"
+                  aria-label="Wallace Croft on Instagram"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Instagram className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="founder-profile-details mt-16 space-y-6 text-[0.95rem] leading-8 text-navy/80">
-            {founder.bio.split("\n\n").map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
+          <div className="founder-profile-details text-navy/80">
+            {founder.bio.split("\n\n").map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
 

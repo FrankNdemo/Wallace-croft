@@ -16,7 +16,13 @@ import {
 import { Navbar } from "@/components/layout/Navbar";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { BlogSubscribeForm } from "@/components/sections/BlogSubscribeForm";
-import { blogCategories, blogPosts, getPostMeta, type BlogCategory, type BlogPost } from "@/data/blog";
+import {
+  blogCategories,
+  blogPosts,
+  getPostMeta,
+  type BlogCategory,
+  type BlogPost,
+} from "@/data/blog";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export function categoryToSlug(category: BlogCategory) {
@@ -92,7 +98,10 @@ export function BlogListingPage({
   const featuredThinking = posts.filter((post) => post.slug !== featuredPost.slug).slice(0, 3);
   const postsPerPage = isMobile ? MOBILE_POSTS_PER_PAGE : DESKTOP_POSTS_PER_PAGE;
   const totalPages = Math.max(1, Math.ceil(posts.length / postsPerPage));
-  const pageNumbers = useMemo(() => Array.from({ length: totalPages }, (_, index) => index + 1), [totalPages]);
+  const pageNumbers = useMemo(
+    () => Array.from({ length: totalPages }, (_, index) => index + 1),
+    [totalPages],
+  );
   const latestPosts = posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
   const heading = latestTitle ?? "Latest Insights";
 
@@ -204,38 +213,44 @@ export function BlogListingPage({
             <h2>{heading}</h2>
             <ArrowRight className="h-5 w-5" />
           </Link>
-          <div className={isExplorePage ? "blog-latest__layout" : "blog-latest__layout blog-latest__layout--plain"}>
+          <div
+            className={
+              isExplorePage
+                ? "blog-latest__layout"
+                : "blog-latest__layout blog-latest__layout--plain"
+            }
+          >
             {isExplorePage ? (
               <aside className="blog-sidebar">
-              <section className="blog-industry-card">
-                <h3>Thought leadership with transformation insights</h3>
-                {leadershipTopics.map(({ icon: Icon, title: topicTitle, description }) => (
-                  <div className="blog-industry-card__item" key={topicTitle}>
-                    <Icon className="h-7 w-7" />
-                    <div>
-                      <h4>{topicTitle}</h4>
-                      <p>{description}</p>
+                <section className="blog-industry-card">
+                  <h3>Thought leadership with transformation insights</h3>
+                  {leadershipTopics.map(({ icon: Icon, title: topicTitle, description }) => (
+                    <div className="blog-industry-card__item" key={topicTitle}>
+                      <Icon className="h-7 w-7" />
+                      <div>
+                        <h4>{topicTitle}</h4>
+                        <p>{description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </section>
+
+                <section className="blog-template-card">
+                  <span>MVP planning template</span>
+                  <div className="blog-template-card__device" aria-hidden="true">
+                    <div className="blog-template-card__screen">
+                      <strong>WC</strong>
+                      <i />
+                      <i />
+                      <i />
                     </div>
                   </div>
-                ))}
-              </section>
-
-              <section className="blog-template-card">
-                <span>MVP planning template</span>
-                <div className="blog-template-card__device" aria-hidden="true">
-                  <div className="blog-template-card__screen">
-                    <strong>WC</strong>
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                </div>
-                <p>Give your roadmap a clearer path with our free starter checklist.</p>
-                <button type="button">
-                  Download <ArrowRight className="h-4 w-4" />
-                </button>
-              </section>
-            </aside>
+                  <p>Give your roadmap a clearer path with our free starter checklist.</p>
+                  <Link to="/resources" className="blog-template-card__download">
+                    Download <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </section>
+              </aside>
             ) : null}
 
             {latestPosts.map((post) => (

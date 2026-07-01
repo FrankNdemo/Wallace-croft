@@ -18,23 +18,33 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About - Wallace Croft" },
-      { name: "description", content: "Learn about Wallace Croft, our differentiators, and the enterprise scale behind our transformation work." },
+      {
+        name: "description",
+        content:
+          "Learn about Wallace Croft, our differentiators, and the enterprise scale behind our transformation work.",
+      },
       { property: "og:title", content: "About - Wallace Croft" },
-      { property: "og:description", content: "Learn about Wallace Croft, our differentiators, and the enterprise scale behind our transformation work." },
+      {
+        property: "og:description",
+        content:
+          "Learn about Wallace Croft, our differentiators, and the enterprise scale behind our transformation work.",
+      },
     ],
   }),
 });
 
 function AboutLayout() {
   const matches = useMatches();
-  const hasChildMatch = matches.some((match) => match.routeId !== "/about" && match.pathname.startsWith("/about"));
+  const hasChildMatch = matches.some(
+    (match) => match.routeId !== "/about" && match.pathname.startsWith("/about"),
+  );
 
   if (hasChildMatch) {
     return <Outlet />;
   }
 
   return (
-    <SiteLayout>
+    <SiteLayout footerVariant="light">
       <PageHero
         className="page-hero-section--lower-copy page-hero-section--mobile-lift-visual"
         eyebrow="About"

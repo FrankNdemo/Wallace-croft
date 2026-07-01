@@ -122,15 +122,15 @@ const quickLinks = [
 export const founderProfiles = [
   {
     slug: "alvis-n",
-    name: "Alvis N.",
+    name: "Alvis Njenga",
     title: "Chief Executive Officer",
-    image: "/founder-purpose-laptop.png",
+    image: "/founder-alvis-new.png",
     alt: "Portrait of Alvis Njenga",
     bio: "Alvis Njenga is the Chief Executive Officer of Wallace Croft, setting the vision, direction, and ambition behind the company.\n\nHe brings a rare mix of developer instincts, product taste, and strategic focus to the table, turning early ideas into clear opportunities and guiding the team toward work that matters. Alvis keeps Wallace Croft pointed at bold, useful innovation: technology that feels sharp, practical, and built for real business momentum.\n\nHis leadership style is calm, curious, and future-facing. He is driven by partnerships, meaningful products, and the belief that great digital transformation should leave people and companies more capable than it found them.",
   },
   {
     slug: "ndemo-f",
-    name: "Ndemo F.",
+    name: "Francis Ndemo",
     title: "Chief Technology Officer",
     image: "/founder-systems-real.jpeg",
     alt: "Portrait of Francis Ndemo",
@@ -138,11 +138,19 @@ export const founderProfiles = [
   },
   {
     slug: "kimani-a",
-    name: "Kimani A.",
+    name: "Alvin Kimani",
     title: "Chief Operations Officer",
     image: "/founder-clarity-real.png",
     alt: "Portrait of Alvin Kimani",
     bio: "Alvin Kimani is the Chief Operations Officer of Wallace Croft, keeping the company moving with structure, focus, and delivery discipline.\n\nHe connects strategy to execution, making sure teams have the rhythm, standards, and operating clarity needed to turn ambitious ideas into dependable results. Alvin is systems-minded and detail-aware, with a steady focus on reliability, collaboration, and the kind of execution clients can trust.\n\nHis work helps Wallace Croft stay sharp as it grows: organized without becoming slow, ambitious without losing quality, and always grounded in outcomes that hold up in the real world.",
+  },
+  {
+    slug: "adelaide-bonarari",
+    name: "Adelaide Bonarari",
+    title: "Chief Financial Officer",
+    image: "/adelaide-bonarari.png",
+    alt: "Portrait of Adelaide Bonarari",
+    bio: "Adelaide Bonarari is the Chief Financial Officer of Wallace Croft, shaping the financial clarity and discipline that turns ambition into sustainable growth.\n\nShe connects strategy with the numbers behind it—guiding planning, forecasting, investment decisions, risk management, and the financial systems that help the company scale with confidence. Her work gives Wallace Croft a clear view of where to invest, how to grow responsibly, and how to keep every bold move grounded in sound judgment.\n\nAdelaide brings a thoughtful, forward-looking approach to finance. By balancing opportunity with accountability, she helps Wallace Croft build for the long term while giving its teams the insight and stability they need to do their best work today.",
   },
 ] as const;
 

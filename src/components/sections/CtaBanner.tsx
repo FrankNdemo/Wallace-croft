@@ -3,14 +3,12 @@
 import { useState, type FormEvent } from "react";
 import { ArrowRight, Mail, Mic, Phone, Sparkles } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/ui-pro/Reveal";
 import { submitContact } from "@/server-fns/contact";
 
 const contactDetails = {
-  emails: [
-    "info@wallacecroft.com",
-    "hello@wallacecroft.com",
-  ],
+  emails: ["info@wallacecroft.com", "hello@wallacecroft.com"],
   phones: [
     ["Kenya", "+254 114 470441"],
     ["Kenya", "+254 710 372157"],
@@ -558,7 +556,7 @@ export function CtaBanner({ showLocationMedia = false }: CtaBannerProps) {
                 <label>
                   <input name="consentPrivacy" type="checkbox" />
                   <span>
-                    By submitting I agree to the <a href="/privacy-policy">Privacy Policy</a>.
+                    By submitting I agree to the <Link to="/privacy-policy">Privacy Policy</Link>.
                   </span>
                 </label>
               </div>

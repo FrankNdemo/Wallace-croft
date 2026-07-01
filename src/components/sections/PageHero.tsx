@@ -51,7 +51,15 @@ function PageHeroArtwork({
                 : undefined
             }
           >
-            <img className="page-hero-media__object" src={src} alt="" draggable={false} />
+            <img
+              className="page-hero-media__object"
+              src={src}
+              alt=""
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+              draggable={false}
+            />
           </div>
         ))}
       </div>

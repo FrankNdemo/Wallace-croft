@@ -959,12 +959,8 @@ export function CaseStudyFooter() {
     ],
   ] as const;
   const socialLinks = [
-    { label: "Facebook", icon: "facebook" },
-    { label: "LinkedIn", icon: "linkedin" },
-    { label: "X", icon: "x" },
-    { label: "Medium", icon: "medium" },
-    { label: "YouTube", icon: "youtube" },
-    { label: "Instagram", icon: "instagram" },
+    { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/company/wallace-croft" },
+    { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/wallacecroft/" },
   ] as const;
 
   const toggleSection = (title: string) => {
@@ -988,15 +984,15 @@ export function CaseStudyFooter() {
           <Logo />
           <div className="approach-footer__socials" aria-label="Social links">
             {socialLinks.map((item) => (
-              <a key={item.label} href="#" aria-label={item.label}>
+              <a key={item.label} href={item.href} aria-label={`Wallace Croft on ${item.label}`} target="_blank" rel="noreferrer">
                 <SocialIcon type={item.icon} />
               </a>
             ))}
           </div>
           <p>&copy;{new Date().getFullYear()} Wallace Croft. All rights reserved.</p>
           <div className="approach-footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms and Conditions</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-and-conditions">Terms and Conditions</Link>
           </div>
         </div>
         <div className="case-study-footer__columns">
@@ -1034,7 +1030,8 @@ export function CaseStudyFooter() {
 function getFooterLink(item: string) {
   if (item === "About") return "/about";
   if (item === "Case Studies") return "/case-studies";
-  if (item === "Resources" || item === "Approach") return "/resources";
+  if (item === "Resources") return "/resources";
+  if (item === "Approach") return "/approach";
   if (item === "Contact") return "/contact";
   if (
     [

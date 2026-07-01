@@ -1,23 +1,26 @@
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { LightFooter } from "@/components/layout/LightFooter";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 
 export function SiteLayout({
   children,
   hideFooter = false,
   navVariant = "dark",
+  footerVariant = "dark",
 }: {
   children: ReactNode;
   hideFooter?: boolean;
   navVariant?: "dark" | "light";
+  footerVariant?: "dark" | "light";
 }) {
   return (
     <div className="min-h-screen bg-white text-ink">
       <SmoothScroll />
       <Navbar variant={navVariant} />
       <main>{children}</main>
-      {hideFooter ? null : <Footer />}
+      {hideFooter ? null : footerVariant === "light" ? <LightFooter /> : <Footer />}
     </div>
   );
 }

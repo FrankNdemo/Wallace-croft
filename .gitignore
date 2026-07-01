@@ -26,11 +26,19 @@ test-results
 .nitro
 .env
 .env.*
-.env.example
-.env*.example
-env.example
-env.*.example
+!.env.example
+!.env.*.example
+!env.example
+!env.*.example
 *.local
+
+# Private credentials and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
 
 # Wrangler / Cloudflare
 .wrangler/

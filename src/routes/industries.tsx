@@ -35,6 +35,24 @@ const industries = [
     image:
       "https://images.pexels.com/photos/28906310/pexels-photo-28906310.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
+  {
+    title: "Healthcare",
+    body: "Build secure patient portals, care coordination systems, health data integrations, and intelligent clinical workflows.",
+    image:
+      "https://images.pexels.com/photos/6303646/pexels-photo-6303646.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
+  {
+    title: "Financial Services",
+    body: "Develop trusted banking platforms, payment systems, risk engines, and real-time financial analytics.",
+    image:
+      "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
+  {
+    title: "Logistics",
+    body: "Create fleet, warehouse, inventory, and delivery systems that make every movement visible and efficient.",
+    image:
+      "https://images.pexels.com/photos/6169640/pexels-photo-6169640.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
 ] as const;
 
 const footerCols = [
@@ -44,15 +62,34 @@ const footerCols = [
   },
   {
     title: "Digital Services",
-    items: ["AI Development Services", "Digital Transformation", "Custom Software", "Technology Modernization", "Data Strategy", "Web Development"],
+    items: [
+      "AI Development Services",
+      "Digital Transformation",
+      "Custom Software",
+      "Technology Modernization",
+      "Data Strategy",
+      "Web Development",
+    ],
   },
   {
     title: "Industries",
-    items: ["Retail", "Manufacturing", "Distribution", "Building Materials", "Healthcare", "Finance"],
+    items: [
+      "Retail",
+      "Manufacturing",
+      "Distribution",
+      "Building Materials",
+      "Healthcare",
+      "Finance",
+    ],
   },
   {
     title: "GenAI Services",
-    items: ["GenAI Software Development", "AI Agent Development", "LLM Development", "AI Strategy & Consulting"],
+    items: [
+      "GenAI Software Development",
+      "AI Agent Development",
+      "LLM Development",
+      "AI Strategy & Consulting",
+    ],
   },
 ] as const;
 
@@ -64,13 +101,13 @@ export const Route = createFileRoute("/industries")({
       {
         name: "description",
         content:
-          "See how Wallace Croft adapts enterprise transformation programs across retail, manufacturing, distribution, and building materials.",
+          "See how Wallace Croft adapts enterprise transformation across retail, manufacturing, distribution, healthcare, finance, and logistics.",
       },
       { property: "og:title", content: "Industries - Wallace Croft" },
       {
         property: "og:description",
         content:
-          "See how Wallace Croft adapts enterprise transformation programs across retail, manufacturing, distribution, and building materials.",
+          "See how Wallace Croft adapts enterprise transformation across retail, manufacturing, distribution, healthcare, finance, and logistics.",
       },
     ],
   }),
@@ -97,7 +134,9 @@ function IndustriesPage() {
           <div className="container-pro industries-grid">
             {industries.map((industry, index) => (
               <Reveal key={industry.title} i={index % 2}>
-                <article className={`industry-card ${index % 2 === 1 ? "industry-card--copy-first" : ""}`}>
+                <article
+                  className={`industry-card ${index % 2 === 1 ? "industry-card--copy-first" : ""}`}
+                >
                   <div className="industry-card__copy">
                     <h2>{industry.title}</h2>
                     <p>{industry.body}</p>
@@ -172,12 +211,8 @@ function IndustryContact() {
 function IndustriesFooter() {
   const [openSections, setOpenSections] = useState(() => new Set(["Industries"]));
   const socialLinks = [
-    { label: "Facebook", icon: "facebook" },
-    { label: "LinkedIn", icon: "linkedin" },
-    { label: "X", icon: "x" },
-    { label: "Medium", icon: "medium" },
-    { label: "YouTube", icon: "youtube" },
-    { label: "Instagram", icon: "instagram" },
+    { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/company/wallace-croft" },
+    { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/wallacecroft/" },
   ] as const;
 
   const toggleSection = (title: string) => {
@@ -202,15 +237,21 @@ function IndustriesFooter() {
             <Logo />
             <div className="industries-footer__socials" aria-label="Social links">
               {socialLinks.map((item) => (
-                <a key={item.label} href="#" aria-label={item.label}>
+                <a
+                  key={item.label}
+                  href={item.href}
+                  aria-label={`Wallace Croft on ${item.label}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <SocialIcon type={item.icon} />
                 </a>
               ))}
             </div>
             <p>&copy;{new Date().getFullYear()} Wallace Croft. All rights reserved.</p>
             <div className="industries-footer__legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms and Conditions</a>
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/terms-and-conditions">Terms and Conditions</Link>
             </div>
           </div>
           {footerCols.map((col) => {
@@ -230,7 +271,9 @@ function IndustriesFooter() {
                 <ul id={`industries-footer-${col.title.toLowerCase().replaceAll(" ", "-")}`}>
                   {col.items.map((item) => (
                     <li key={item}>
-                      <Link to={col.title === "Industries" ? "/industries" : "/services"}>{item}</Link>
+                      <Link to={col.title === "Industries" ? "/industries" : "/services"}>
+                        {item}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -275,15 +318,21 @@ function IndustriesFooterLegacy() {
             <Logo />
             <div className="industries-footer__socials" aria-label="Social links">
               {["f", "in", "x", "m", "▶", "◎"].map((item) => (
-                <a key={item} href="#" aria-label={item}>
+                <a
+                  key={item}
+                  href="https://www.linkedin.com/company/wallace-croft"
+                  aria-label={item}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {item}
                 </a>
               ))}
             </div>
             <p>&copy;{new Date().getFullYear()} Wallace Croft. All rights reserved.</p>
             <div className="industries-footer__legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms and Conditions</a>
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/terms-and-conditions">Terms and Conditions</Link>
             </div>
           </div>
           {footerCols.map((col) => (
@@ -295,7 +344,9 @@ function IndustriesFooterLegacy() {
               <ul>
                 {col.items.map((item) => (
                   <li key={item}>
-                    <Link to={col.title === "Industries" ? "/industries" : "/services"}>{item}</Link>
+                    <Link to={col.title === "Industries" ? "/industries" : "/services"}>
+                      {item}
+                    </Link>
                   </li>
                 ))}
               </ul>

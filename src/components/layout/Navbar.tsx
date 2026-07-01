@@ -9,7 +9,7 @@ const links = [
   { label: "Services", to: "/services" },
   { label: "Industries", to: "/industries" },
   { label: "Case Studies", to: "/case-studies" },
-  { label: "APProach", to: "/resources" },
+  { label: "Approach", to: "/approach" },
   { label: "About", to: "/about" },
 ] as const;
 
@@ -23,9 +23,13 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
   const isLight = variant === "light";
 
   return (
-    <header className={`relative z-50 ${isLight ? "border-b border-navy/10 bg-white text-navy" : "bg-navy-deep text-white"}`}>
+    <header
+      className={`relative z-50 ${isLight ? "border-b border-navy/10 bg-white text-navy" : "bg-navy-deep text-white"}`}
+    >
       <div>
-        <div className={`container-pro flex ${isLight ? "h-[66px]" : "h-[78px]"} items-center gap-6 py-4`}>
+        <div
+          className={`container-pro flex ${isLight ? "h-[66px]" : "h-[78px]"} items-center gap-6 py-4`}
+        >
           <Link to="/" aria-label="Wallace Croft home" className="shrink-0">
             <Logo light={!isLight} />
           </Link>

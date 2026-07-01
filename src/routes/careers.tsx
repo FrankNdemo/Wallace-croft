@@ -84,7 +84,7 @@ function CareersPage() {
 
   return (
     <div className="careers-page">
-      <SiteLayout>
+      <SiteLayout footerVariant="light">
         <PageHero
           className="page-hero-section--lower-copy page-hero-section--mobile-lift-visual careers-page-hero"
           eyebrow="Careers"
@@ -105,7 +105,9 @@ function CareersPage() {
         <section id="overview" className="careers-impact bg-white text-navy">
           <div className="container-pro">
             <div className="careers-impact__copy">
-              <h2>Driven by impact<sup>TM</sup></h2>
+              <h2>
+                Driven by impact<sup>TM</sup>
+              </h2>
               <p>
                 We need voices that tell us how to build software that delivers lasting impact. It
                 does not matter who you are, where you come from, or what your interest is. At
@@ -117,7 +119,7 @@ function CareersPage() {
                 teams, culture, and opportunities that help you grow, have fun, and create your own
                 impact that matters.
               </p>
-              <Link to="/careers/vacancies" className="about-outline-button mt-8">
+              <Link to="/careers/vacancies" className="careers-open-roles mt-8">
                 View open roles <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

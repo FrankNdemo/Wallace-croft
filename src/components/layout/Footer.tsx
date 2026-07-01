@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Twitter, Youtube } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState, type FormEvent } from "react";
@@ -33,7 +33,7 @@ const cols = [
     items: [
       { label: "About", to: "/about" },
       { label: "Case Studies", to: "/case-studies" },
-      { label: "APProach", to: "/resources" },
+      { label: "Approach", to: "/approach" },
       { label: "Contact Us", to: "/contact" },
     ],
   },
@@ -148,14 +148,32 @@ export function Footer() {
           <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-white/78">
             <span>&copy; {new Date().getFullYear()} Wallace Croft. All rights reserved.</span>
             <span className="text-white/24">|</span>
-            <span>www.wallacecroft.com</span>
+            <Link to="/privacy-policy" className="transition hover:text-orange">
+              Privacy
+            </Link>
+            <Link to="/terms-and-conditions" className="transition hover:text-orange">
+              Terms
+            </Link>
           </div>
           <div className="flex gap-3">
-            {[Linkedin, Twitter, Github, Youtube].map((Icon, index) => (
+            {[
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/wallace-croft",
+                Icon: Linkedin,
+              },
+              {
+                label: "Instagram",
+                href: "https://www.instagram.com/wallacecroft/",
+                Icon: Instagram,
+              },
+            ].map(({ label, href, Icon }) => (
               <a
-                key={index}
-                href="#"
-                aria-label="social"
+                key={label}
+                href={href}
+                aria-label={`Wallace Croft on ${label}`}
+                target="_blank"
+                rel="noreferrer"
                 className="grid h-9 w-9 place-items-center border border-white/15 transition hover:border-orange hover:text-orange"
               >
                 <Icon className="h-4 w-4" />
