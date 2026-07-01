@@ -2541,6 +2541,10 @@ footer button:disabled {
   color: #ffffff;
 }
 
+.about-team-heading .about-outline-button {
+  border-color: var(--orange);
+}
+
 .careers-page .page-hero-section {
   background: var(--navy-deep);
 }
@@ -2573,9 +2577,6 @@ footer button:disabled {
   width: min(100%, 430px);
   max-height: 390px;
   object-fit: contain;
-  /* The source artwork has a near-black field baked into the PNG.
-     Screen it over the hero so only the luminous glass artwork remains. */
-  mix-blend-mode: screen;
   filter: none;
   -webkit-mask-image: none;
   mask-image: none;
@@ -3122,9 +3123,20 @@ footer button:disabled {
   grid-template-columns: minmax(15rem, 1.35fr) repeat(3, minmax(9rem, 0.8fr));
 }
 
+.light-site-footer .approach-footer__socials {
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
 @media (max-width: 767px) {
   .light-site-footer .approach-footer__grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .light-site-footer .approach-footer__grid > div:first-child {
+    grid-column: 1 / -1;
+    width: max-content;
+    max-width: 100%;
   }
 }
 
@@ -3162,6 +3174,7 @@ footer button:disabled {
   width: 100%;
   max-width: 20rem;
   box-shadow: 0 35px 85px -45px rgba(15, 23, 42, 0.22);
+  transform: translateX(clamp(0.5rem, 1.35vw, 1rem));
 }
 
 .founder-profile-hero__photo {
@@ -3249,6 +3262,7 @@ footer button:disabled {
   .founder-profile-hero__image {
     max-width: 11rem;
     border-radius: 1.4rem;
+    transform: none;
   }
 
   .founder-profile-hero__photo {
@@ -3267,8 +3281,15 @@ footer button:disabled {
   }
 
   .founder-profile-follow {
+    display: grid;
+    grid-template-columns: repeat(2, 2.25rem);
     margin-top: 1rem !important;
-    gap: 0.45rem;
+    gap: 0.5rem 0.55rem;
+  }
+
+  .founder-profile-follow__label {
+    grid-column: 1 / -1;
+    margin-right: 0;
   }
 
   .founder-profile-social {
@@ -3690,6 +3711,18 @@ footer button:disabled {
   height: 3.35rem;
   place-items: center;
   color: rgba(15, 23, 42, 0.46);
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.about-reason-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0.3rem;
+  border: 1px solid rgba(242, 118, 34, 0.34);
+  opacity: 0;
+  transform: scale(0.72) rotate(10deg);
 }
 
 .about-reason-icon::after {
@@ -3700,12 +3733,75 @@ footer button:disabled {
   width: 1.35rem;
   height: 1.35rem;
   background: var(--orange);
+  transition:
+    border-radius 180ms ease,
+    transform 180ms ease;
 }
 
 .about-reason-icon svg {
   position: relative;
   z-index: 1;
   stroke-width: 1.4;
+  transition: transform 180ms ease;
+}
+
+.about-reason-item:hover .about-reason-icon,
+.about-reason-item:focus-within .about-reason-icon {
+  color: var(--navy);
+  transform: translateY(-2px);
+  animation: about-reason-icon-pop 420ms cubic-bezier(0.2, 1.55, 0.42, 1);
+}
+
+.about-reason-item:hover .about-reason-icon::before,
+.about-reason-item:focus-within .about-reason-icon::before {
+  animation: about-reason-burst 460ms ease-out;
+}
+
+.about-reason-item:hover .about-reason-icon::after,
+.about-reason-item:focus-within .about-reason-icon::after {
+  border-radius: 50%;
+  transform: translate(0.18rem, -0.18rem) scale(1.16);
+  animation: about-reason-accent-pop 420ms cubic-bezier(0.2, 1.55, 0.42, 1);
+}
+
+.about-reason-item:hover .about-reason-icon svg,
+.about-reason-item:focus-within .about-reason-icon svg {
+  transform: scale(1.1) rotate(-6deg);
+}
+
+@keyframes about-reason-icon-pop {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  54% {
+    transform: translateY(-4px) scale(1.12);
+  }
+  100% {
+    transform: translateY(-2px) scale(1);
+  }
+}
+
+@keyframes about-reason-burst {
+  0% {
+    opacity: 0.78;
+    transform: scale(0.64) rotate(10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.42) rotate(34deg);
+  }
+}
+
+@keyframes about-reason-accent-pop {
+  0% {
+    transform: translate(0, 0) scale(0.72);
+  }
+  58% {
+    transform: translate(0.22rem, -0.22rem) scale(1.28);
+  }
+  100% {
+    transform: translate(0.18rem, -0.18rem) scale(1.16);
+  }
 }
 
 .about-reason-item h3 {
